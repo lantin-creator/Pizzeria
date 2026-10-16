@@ -1,0 +1,172 @@
+body {
+    background-color: black;
+    width: auto;
+    height: auto;
+}
+.btn-back {
+    background-color: inherit;
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 212px;
+    height: 35px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 0cap;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.number-logo {
+    position: absolute;
+    top: 35%;
+    left: 16%;
+    width: 600px;
+    height: 50px;
+    background-color: inherit;
+    border: 1px solid white;
+    color: aliceblue;
+}
+.number-logo:not(:focus):placeholder-shown {
+    text-align: center;
+}
+.password-logo {
+    position: absolute;
+    top: 45%;
+    left: 16%;
+    width: 600px;
+    height: 50px;
+    background-color: inherit;
+    border: 1px solid white;
+    color: aliceblue;
+}
+.password-logo:not(:focus):placeholder-shown {
+    text-align: center;
+}
+.Register-logo {
+    position: absolute;
+    cursor: pointer;
+    left: 60%;
+    top: 55%;
+    color: white;
+    font-size: 25px;
+}
+.login-link {
+    position: absolute;
+    cursor: pointer;
+    left: 75%;
+    top: 55%;
+    color: white;
+    font-size: 25px;
+}
+.Send-code {
+    position: absolute;
+    background-color: inherit;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    top: 70%;
+    left: 33%;
+    width: 250px;
+    height: 60px;
+    cursor: pointer;
+}
+.card-logo {
+    position: relative;
+    width: 900px;
+    height: 800px;
+    margin: 20px auto;
+    margin-left: 470px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 12px;
+}
+.Entrance {
+    text-align: center;
+    color: white;
+    padding-top: 170px;
+    font-size: 20px;
+}
+@media (max-width: 1440px) {
+    .card {
+        width: 800px;
+        height: 700px;
+        margin-left: 300px;
+    }
+    .Register {
+        left: 65%;
+    }
+    .Entrance {
+        padding-top: 150px;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .card {
+        width: 600px;
+        margin-left: 200px;
+    }
+    .number {
+        width: 400px;
+    }
+    .password {
+        width: 400px;
+    }
+    .Register {
+        left: 48.5%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card {
+        width: 500px;
+        height: 600px;
+        margin-left: 125px;
+        margin-top: 100px;
+    }
+    .Entrance {
+        padding-top: 120px;
+    }
+    .number {
+        width: 400px;
+        left: 10%;
+    }
+    .password {
+        width: 400px;
+        left: 10%;
+    }
+    .Register {
+        left: 48.5%;
+    }
+    .Send-code {
+        left: 24%;
+    }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+    .btn-back {
+        font-size: 15px;
+        padding-left: 0;
+    }
+    .card {
+        width: 350px;
+        height: 600px;
+        margin-left: 5px;
+        margin-top: 100px;
+    }
+    .Entrance {
+        padding-top: 120px;
+    }
+    .number {
+        width: 300px;
+        left: 6%;
+    }
+    .password {
+        width: 300px;
+        left: 6%;
+    }
+    .Register {
+        left: 37%;
+        font-size: 23px;
+    }
+    .Send-code {
+        left: 15%;
+    }
+}

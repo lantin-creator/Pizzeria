@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nf-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000;
+    background-image: radial-gradient(
+        circle at 50% 40%,
+        rgba(255, 106, 0, 0.12) 0%,
+        rgba(0, 0, 0, 0) 60%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+}
+
+.nf-card {
+    width: 600px;
+    max-width: 90%;
+    padding: 60px 40px;
+    background-color: rgba(217, 217, 217, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(255, 106, 0, 0.08);
+}
+
+.nf-code {
+    font-size: 140px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(to bottom, #FFCC00, #FF6A00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+}
+
+.nf-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.nf-text {
+    font-size: 17px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 35px;
+}
+
+.nf-button {
+    display: inline-block;
+    padding: 15px 45px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 12px;
+    background: linear-gradient(to bottom, #FFCC00, #FF6A00);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nf-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 106, 0, 0.4);
+}
+
+.nf-button:active {
+    transform: translateY(0);
+}
+
+/* Планшеты */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .nf-card {
+        padding: 50px 30px;
+    }
+    .nf-code {
+        font-size: 110px;
+    }
+    .nf-title {
+        font-size: 26px;
+    }
+    .nf-text {
+        font-size: 15px;
+    }
+}
+
+/* Мобильные */
+@media (max-width: 767px) {
+    .nf-card {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+    .nf-code {
+        font-size: 80px;
+    }
+    .nf-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .nf-text {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+    .nf-button {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,2111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#main{
+    position: relative;
+    width: 100%;
+    height: 955px;
+    background-image: url(./assets/background.png);
+    background-size: cover;
+    background-position: center;
+}
+.logo{
+    background-image: url(./assets/logo.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    border-radius: 22px;
+    top: 5%;
+    left: 4%;
+    width: 70px;
+    height: 70px;
+}
+.name-logo{
+    font-size: 25px;
+    font-weight: bold;
+    position: absolute;
+    top: 7.3%;
+    left: 7.8%;
+    background: linear-gradient(to right, #FF0000, #FF8800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.Over100{
+    position: absolute; 
+    left: 5%; 
+    top: 60%; 
+    color: white; 
+    font-size: 15px;
+}
+.Over100-2{
+    position: absolute; 
+    left: 5%; 
+    top: 70%; 
+    color: white; 
+    font-size: 15px;
+}
+.Over1500{
+    position: absolute; 
+    left: 44%; 
+    top: 60%; 
+    color: white; 
+    font-size: 15px;
+}
+.years10{
+    position: absolute;
+    left: 80%; 
+    top: 60%; 
+    color: white; 
+    font-size: 15px;
+}
+.years10-2{
+    position: absolute; 
+    left: 83%; 
+    top: 70%; 
+    color: white; 
+    font-size: 15px;
+}
+.Delivery{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+.min{
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    font-size: 25px;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+.plus-cards{
+    position: absolute;
+    position: relative;
+    top: 40%;
+    left: 15%;
+    width: 400px;
+    height: 180px;
+    background-color: rgba(217, 217, 217, 0.2);
+    border-radius: 12px;
+}
+.hot{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 70px;
+    height: 70px;
+    background-image: url(./assets/hot.png);
+    background-size: cover;
+    background-position: center;
+}
+.like{
+    position: absolute;
+    top: 18%;
+    left: 47%;
+    width: 70px;
+    height: 70px;
+    background-image: url(./assets/like.png);
+    background-size: cover;
+    background-position: center;
+}
+.medal{
+    position: absolute;
+    top: 20%;
+    left: 79%;
+    width: 70px;
+    height: 70px;
+    background-image: url(./assets/medal.png);
+    background-size: cover;
+    background-position: center;
+}
+.btn-order{
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    width: 200px;
+    height: 70px;
+    background-color: #FF6200;
+    border-radius: 12px;
+    color: #FFFFFF;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.spacer{
+    margin-bottom: 105px;
+    height: 100px;
+}
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; 
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(76, 76, 76, 0.4);
+    z-index: 1;
+    margin-top: calc(70vh - 100px);
+}
+.popular, .pizza, .snacks, .drinks, 
+.Desserts, .Sauces, .Combo, .Reviews, .Callback {
+    position: static;
+    padding-left: 50px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+    background: transparent;   
+    border: none;              
+    font-family: inherit;      
+    outline: none;             
+}
+.card-basket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto; 
+    margin-right: 100px;
+    cursor: pointer;
+}
+.Basket {
+    width: 52px;
+    height: 52px;
+    position: static; 
+    background-image: url(./assets/shopping-cart.png);
+    background-size: cover;
+    background-position: center;
+}
+.basket {
+    position: static; 
+    color: white;
+    font-size: 20px; 
+    margin-top: 5px;
+}
+#catalog{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+#popular-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.popular1{
+    position: absolute;
+    top: 45%;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;       
+    width: 50px;       
+    height: 50px; 
+    background-image: url(./assets/up-button.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    display: none; 
+    z-index: 1000;
+}
+.popular1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.popular1-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/pepperoni-pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price1App{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-popular1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.popular2{
+    position: absolute;
+    top: 45%;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.popular2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.popular2-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/4\ Cheese\ Pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price2App{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-popular2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.popular3{
+    position: absolute;
+    top: 45%;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.popula3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.popular3-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Hawaiian\ pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-popular3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+#pizza-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.pizza1{
+    position: absolute;
+    top: 90%;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.pizza1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.pizza1-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/pepperoni-pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-pizza1{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-pizza1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.pizza2{
+    position: absolute;
+    top: 90%;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.pizza2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.pizza2-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/4\ Cheese\ Pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-pizza2{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-pizza2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.pizza3{
+    position: absolute;
+    top: 90%;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.pizza3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.pizza3-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Hawaiian\ pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-pizza3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-pizza3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+#snacks-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 400px;
+}
+.snacks1{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.snacks1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.snacks1-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/french\ fries.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-snacks1{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-snacks1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.snacks2{
+    position: absolute;
+    top: 30%;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.snacks2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.snacks2-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Nuggets.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-snacks2{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-snacks2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.snacks3{
+    position: absolute;
+    top: 30%;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.snacks3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.snacks3-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Onion\ rings.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-snacks3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-snacks3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+#Drinks-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 200px;
+}
+.Drinks1{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Drinks1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Drinks1-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/cola.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-Drinks1{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Drinks1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.Drinks2{
+    position: absolute;
+    top: 10%;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Drinks2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Drinks2-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Fanta.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-Drinks2{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Drinks2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.Drinks3{
+    position: absolute;
+    top: 10%;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Drinks3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Drinks3-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/sprite.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-Drinks3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Drinks3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+#Desserts-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 200px;
+}
+.Desserts1{
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Desserts1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Desserts1-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/ice\ cream.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-Desserts1{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Desserts1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.Desserts2{
+    position: absolute;
+    top: 0;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Desserts2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Desserts2-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/tiramisu.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-Desserts2{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Desserts2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.Desserts3{
+    position: absolute;
+    top: 0;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Desserts3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Desserts3-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Snickers\ Cheesecake.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-Desserts3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Desserts3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+#sauces-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 140px;
+}
+.sauces1{
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.sauces1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.sauces1-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/cheese\ sauce.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-sauces1{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-sauces1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.sauces2{
+    position: absolute;
+    top: 0;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.sauces2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.sauces2-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/BBQ\ sauce.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-sauces2{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-sauces2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.sauces3{
+    position: absolute;
+    top: 0;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.sauces3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.sauces3-imge{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Thousand\ Island\ Sauce.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 23%;
+    left: 17%; 
+}
+.price-sauces3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-sauces3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+#Combo-catalog{
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 100px;
+}
+.Combo1{
+    position: absolute;
+    top: 0;
+    left: 15%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Combo1-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Combo1-imge1{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/cheese\ sauce.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 25%;
+    left: 5%; 
+}
+.Combo1-imge2{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/pepperoni-pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 15%;
+    left: 30%; 
+    z-index: 2;
+}
+.price-Combo1{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Combo1{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.Combo2{
+    position: absolute;
+    top: 0;
+    left: 41%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Combo2-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Combo2-imge1{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/BBQ\ sauce.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 25%;
+    left: 5%; 
+}
+.Combo2-imge2{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Hawaiian\ pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 15%;
+    left: 30%; 
+    z-index: 2;
+}
+.price-Combo2{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Combo2{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.Combo3{
+    position: absolute;
+    top: 0;
+    left: 68%;
+    width: 300px;
+    height: 350px;
+    border-radius: 12px;
+    border: 1px solid white;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+}
+.Combo3-name{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+.Combo3-imge1{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/Thousand\ Island\ Sauce.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 25%;
+    left: 5%; 
+}
+.Combo3-imge2{
+    width: 200px;
+    height: 200px;
+    background-image: url(./assets/4\ Cheese\ Pizza.png);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 15%;
+    left: 30%; 
+    z-index: 2;
+}
+.price-Combo3{
+    position: absolute;
+    top: 87%;
+    left: 7%;
+    color: #E0BF00;
+    font-size: 30px;
+    font-weight: bold;
+}
+.Choose-Combo3{
+    position: absolute;
+    display: flex;
+    top: 87%;
+    left: 65%;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background: linear-gradient(#FF6A00, #FFCC00);
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+}
+.menu .active {
+    color: #FFC107;
+    font-weight: bold;
+}
+#popular-catalog,
+#pizza-catalog,
+#snacks-catalog,
+#Drinks-catalog,
+#Desserts-catalog,
+#sauces-catalog,
+#Combo-catalog {
+    scroll-margin-top: 300px;
+}
+.user{
+    position: absolute; 
+    top: 2%; 
+    left: 95%; 
+    background-image: url(./assets/user.png); 
+    background-size: cover;
+    background-position: center;
+    width: 72px; 
+    height: 72px;
+    cursor: pointer;
+}
+#Reviews-about-us{
+    width: 100%;
+    height: 555px;
+    background-color: black;
+    position: relative;
+}
+.Reviews-about-us{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    font-size: 30px;
+    color: white;
+}
+.Reviews1-card{
+    position: absolute;
+    position: relative;
+    top: 24%;
+    left: 15%;
+    width: 400px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: rgba(217, 217, 217, 0.2);
+}
+.user2{
+    position: absolute;
+    top: 8%;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+    background-image: url(./assets/user2.png);
+    background-size: cover;
+    background-position: center;
+}
+.user2-name{
+    position: absolute;
+    top: 13%;
+    left: 18%;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.star1{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 13.5%;
+    left: 68%;
+    background-image: url(./assets/star.png);
+    background-size: cover;
+    background-position: center;
+}
+.star2{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 13.5%;
+    left: 74%;
+    background-image: url(./assets/star.png);
+    background-size: cover;
+    background-position: center;
+}
+.star3{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 13.5%;
+    left: 80%;
+    background-image: url(./assets/star.png);
+    background-size: cover;
+    background-position: center;
+}
+.star4{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 13.5%;
+    left: 86%;
+    background-image: url(./assets/star.png);
+    background-size: cover;
+    background-position: center;
+}
+.star5{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 13.5%;
+    left: 92%;
+    background-image: url(./assets/star.png);
+    background-size: cover;
+    background-position: center;
+}
+.text-user2{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    color: white;
+    font-size: 17px;
+    white-space: pre;
+}
+.Reviews2-card{
+    position: absolute;
+    top: 30%;
+    left: 40%;
+    width: 410px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: rgba(217, 217, 217, 0.2);
+}
+.Reviews3-card{
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    width: 410px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: rgba(217, 217, 217, 0.2);
+}
+#footer{
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #202020;
+}
+.Text-footer{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: #FFFFFF;
+    opacity: 50%;
+    font-size: 30px;
+}
+.instagram{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    background-image: url(./assets/instagram.png);
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.youtube{
+    position: absolute;
+    top: 50%;
+    left: 32%;
+    background-image: url(./assets/youtube.png);
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.twiter{
+    position: absolute;
+    top: 50%;
+    left: 34%;
+    background-image: url(./assets/twiter.png);
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.tg{
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    background-image: url(./assets/tg.png);
+    background-size: cover;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.Work-with-us{
+    position: absolute;
+    top: 30%;
+    left: 60%;
+    font-size: 30px;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+.numberApp{
+    position: absolute;
+    top: 55%;
+    left: 60%;
+    font-size: 20px;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+.email{
+    position: absolute;
+    top: 75%;
+    left: 60%;
+    font-size: 20px;
+    color: #FFFFFF;
+    opacity: 50%;
+}
+@media (max-width: 1440px){
+    .user{
+        position: absolute;
+        top: 4%;
+        left: 90%;
+    }
+    .name-logo{
+        position: absolute;
+        left: 9%;
+    }
+    .Delivery{
+        left: 10%;
+    }
+    .min{
+        left: 10%;
+    }
+    .plus-cards{
+        left: 10%;
+    }
+    .btn-order{
+        left: 10%;
+    }
+    .Reviews1-card{
+        left: 10%;
+    }
+    .Reviews3-card{
+        left: 70%;
+    }
+    .popular, .pizza, .snacks, .drinks, 
+    .Desserts, .Sauces, .Combo, .Reviews, .callback {
+    position: static;
+    padding-left: 0px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1430px){
+    .name-logo{
+        left: 12%;
+    }
+    .Delivery{
+        font-size: 28px;
+    }
+    .min{
+        font-size: 23px;
+    }
+    .plus-cards{
+        width: 350px;
+        height: 140px;
+    }
+    .hot, .like, .medal{
+        top: 5%;
+    }
+    .Over1500{
+        left: 5%;
+    }
+    .like{
+        left: 45%;
+    }
+    .popular, .pizza, .snacks, .drinks, 
+    .Desserts, .Sauces, .Combo, .Reviews, .callback {
+    position: static;
+    padding-left: 0px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1;
+    }
+    .popular1, .pizza1, .snacks1, .Drinks1, 
+    .Desserts1, .sauces1, .Combo1 {
+        left: 3%;
+    }
+    .popular2, .pizza2, .snacks2, .Drinks2,
+    .Desserts2, .sauces2, .Combo2{
+        left: 35.5%;
+    }
+    .Reviews1-card{
+        left: 0;
+    }
+    .Reviews3-card{
+        left: 80%;
+    }
+    .Text-footer{
+        left: 20%;
+    }
+    .instagram{
+        left: 20%;
+    }
+    .youtube{
+        left: 23%;
+    }
+    .twiter{
+        left: 26%;
+    }
+    .tg{
+        left: 29%;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    .name-logo{
+        left: 14%;
+    }
+    .Delivery{
+        font-size: 25px;
+    }
+    .min{
+        font-size: 20px;
+        top: 33.5%;
+    }
+    .plus-cards{
+        width: 320px;
+        height: 140px;
+        top: 38%;
+    }
+    .hot{
+        top: 2%;
+        width: 60px;
+        height: 60px;
+    }
+    .Over100{
+        top: 45%;
+    }
+    .Over100-2{
+        top: 57%;
+    }
+    .like{
+        top: 4%;
+        width: 60px;
+        height: 60px;
+    }
+    .Over1500{
+        top: 45%;
+        left: 3%;
+    }
+    .medal{
+        top: 5%;
+        width: 60px;
+        height: 60px;
+    }
+    .years10{
+        top: 45%;
+    }
+    .years10-2{
+        top: 57%;
+    }
+    .btn-order{
+        top: 53.5%;
+    }
+    .popular, .pizza, .snacks, .drinks, 
+    .Desserts, .Sauces, .Combo, .Reviews, .callback {
+    position: static;
+    padding-left: 0px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 1;
+    }
+    .card-basket{
+        margin-right: 0;
+    }
+    .popular1, .popular2, .popular3,
+    .pizza1, .pizza2, .pizza3,
+    .snacks1, .snacks2, .snacks3,
+    .Drinks1, .Drinks2, .Drinks3,
+    .Desserts1, .Desserts2, .Desserts3,
+    .sauces1, .sauces2, .sauces3,
+    .Combo1, .Combo2, .Combo3{
+        width: 200px;
+        height: 250px;
+    }
+    .popular1-name, .popular2-name, .popula3-name,
+    .pizza1-name, .pizza2-name, .pizza3-name,
+    .snacks1-name, .snacks2-name, .snacks3-name,
+    .Drinks1-name, .Drinks2-name, .Desserts3-name,
+    .Desserts1-name, .Desserts2-name, .Desserts3-name,
+    .sauces1-name, .sauces2-name, .sauces3-name,
+    .Combo1-name, .Combo2-name, .Combo3-name{
+        font-size: 20px;
+    }
+    .popular1-imge, .popular2-imge, .popular3-imge,
+    .pizza1-imge, .pizza2-imge, .pizza3-imge,
+    .snacks1-imge, .snacks2-imge, .snacks3-imge,
+    .Drinks1-imge, .Drinks2-imge, .Drinks3-imge,
+    .Desserts1-imge, .Desserts2-imge, .Desserts3-imge,
+    .sauces1-imge, .sauces2-imge, .sauces3-imge{
+        width: 120px;
+        height: 120px;
+        left: 20%;
+    }
+    .Combo1-imge1, .Combo2-imge1, .Combo3-imge1{
+        width: 120px;
+        height: 120px;
+        top: 35%;
+    }
+    .Combo1-imge2, .Combo2-imge2, .Combo3-imge2{
+        width: 120px;
+        height: 120px;
+        top: 25%;
+    }
+    .price1, .price2, .price3,
+    .price-pizza1, .price-pizza2, .price-pizza3,
+    .price-snacks1, .price-snacks2, .price-snacks3,
+    .price-Drinks1, .price-Drinks2, .price-Drinks3,
+    .price-Desserts1, .price-Desserts2, .price-Desserts3,
+    .price-sauces1, .price-sauces2, .price-sauces3,
+    .price-Combo1, .price-Combo2, .price-Combo3{
+        font-size: 20px;
+    }
+    .Choose-popular1, .Choose-popular2, .Choose-popular3,
+    .Choose-pizza1, .Choose-pizza2, .Choose-pizza3,
+    .Choose-snacks1, .Choose-snacks2, .Choose-snacks3,
+    .Choose-Drinks1, .Choose-Drinks2, .Choose-Drinks3,
+    .Choose-Desserts1, .Choose-Desserts2, .Choose-Desserts3,
+    .Choose-sauces1, .Choose-sauces2, .Choose-sauces3,
+    .Choose-Combo1, .Choose-Combo2, .Choose-Combo3{
+        width: 60px;
+        height: 25px;
+        font-size: 15px;
+    }
+    .popular1, .pizza1, .snacks1, .Drinks1, 
+    .Desserts1, .sauces1, .Combo1{
+        left: 6%;
+    }
+    .popular2, .pizza2, .snacks2, .Drinks2, 
+    .Desserts2, .sauces2, .Combo2{
+        left: 37%;
+    }
+    .Reviews-about-us{
+        font-size: 25px;
+        left: 5%;
+    }
+    .Reviews1-card{
+        left: 0;
+        width: 350px;
+        height: 200px;
+    }
+    .Reviews2-card{
+        left: 50%;
+        width: 350px;
+        height: 200px;
+    }
+    .Reviews3-card{
+        display: none;
+    }
+    .user2{
+        top: 13%;
+        left: 2%;
+        width: 30px;
+        height: 30px;
+    }
+    .user2-name{
+        left: 11%;
+    }
+    .text-user2{
+        left: -23%;
+        font-size: 14px;
+    }
+    .Text-footer{
+        left: 10%;
+        font-size: 25px;
+    }
+    .instagram{
+        left: 10%;
+    }
+    .youtube{
+        left: 15%;
+    }
+    .twiter{
+        left: 19.5%;
+    }
+    .tg{
+       left: 24%; 
+    }
+    .Work-with-us{
+        left: 50%;
+        font-size: 25px;
+    }
+    .number{
+        left: 50%;
+        font-size: 25px;
+        top: 46%;
+    }
+    .email{
+        left: 50%;
+        top: 60%;
+        font-size: 25px;
+    }
+}
+@media (min-width: 320px) and (max-width: 700px){
+    .logo{
+        width: 40px;
+        height: 40px;
+    }
+    .name-logo{
+        font-size: 15px;
+        top: 6.3%;
+        left: 20%;
+    }
+    .user{
+        left: 79%;
+        width: 52px;
+        height: 52px;
+    }
+    .Delivery{
+        font-size: 15px;
+    }
+    .min{
+        font-size: 15px;
+        top: 32%;
+    }
+    .plus-cards{
+        top: 35%;
+        width: 150px;
+        height: 100px;
+    }
+    .hot{
+        top: 10%;
+        width: 30px;
+        height: 30px;
+    }
+    .Over100{
+        font-size: 7px;
+        top: 43%;
+    }
+    .Over100-2{
+        top: 50%;
+        font-size: 7px;
+    }
+    .like{
+        top: 11.5%;
+        width: 30px;
+        height: 30px;
+    }
+    .Over1500{
+        top: 43%;
+        left: 5%;
+        font-size: 7px;
+    }
+    .medal{
+        top: 15%;
+        width: 30px;
+        height: 30px;
+    }
+    .years10{
+        top: 44%;
+        font-size: 7px;
+    }
+    .years10-2{
+        top: 52%;
+        font-size: 7px;
+    }
+    .btn-order{
+        top: 47%;
+        width: 100px;
+        height: 40px;
+        font-size: 13px;
+    }
+    .menu{
+        gap: 10px;
+    }
+    .popular, .pizza, .snacks, .drinks, 
+    .Desserts, .Sauces, .Combo, .Reviews, .callback{
+    position: static;
+    padding-left: 0px;
+    color: white;
+    font-size: 9px;
+    cursor: pointer;
+    z-index: 1;
+    }
+    .popular{
+        font-size: 8px;
+    }
+    .card-basket{
+        margin-right: 0px;
+    }
+    .Basket{
+        width: 22px;
+        height: 22px;
+    }
+    .basket{
+        font-size: 9px;
+    }
+    .popular1, .popular2, .popular3,
+    .pizza1, .pizza2, .pizza3,
+    .snacks1, .snacks2, .snacks3,
+    .Drinks1, .Drinks2, .Drinks3,
+    .Desserts1, .Desserts2, .Desserts3,
+    .sauces1, .sauces2, .sauces3,
+    .Combo1, .Combo2, .Combo3{
+        width: 100px;
+        height: 150px;
+    }
+    .popular1-name, .popular2-name, .popula3-name,
+    .pizza1-name, .pizza2-name, .pizza3-name,
+    .snacks1-name, .snacks2-name, .snacks3-name,
+    .Drinks1-name, .Drinks2-name, .Desserts3-name,
+    .Desserts1-name, .Desserts2-name, .Desserts3-name,
+    .sauces1-name, .sauces2-name, .sauces3-name,
+    .Combo1-name, .Combo2-name, .Combo3-name{
+        font-size: 15px;
+    }
+    .popular1-imge, .popular2-imge, .popular3-imge,
+    .pizza1-imge, .pizza2-imge, .pizza3-imge,
+    .snacks1-imge, .snacks2-imge, .snacks3-imge,
+    .Drinks1-imge, .Drinks2-imge, .Drinks3-imge,
+    .Desserts1-imge, .Desserts2-imge, .Desserts3-imge,
+    .sauces1-imge, .sauces2-imge, .sauces3-imge{
+        width: 60px;
+        height: 60px;
+        top: 33%;
+        left: 20%;
+    }
+    .Combo1-imge1, .Combo2-imge1, .Combo3-imge1{
+        width: 60px;
+        height: 60px;
+        top: 43%;
+    }
+    .Combo1-imge2, .Combo2-imge2, .Combo3-imge2{
+        width: 60px;
+        height: 60px;
+        top: 33%;
+    }
+     .price1, .price2, .price3,
+    .price-pizza1, .price-pizza2, .price-pizza3,
+    .price-snacks1, .price-snacks2, .price-snacks3,
+    .price-Drinks1, .price-Drinks2, .price-Drinks3,
+    .price-Desserts1, .price-Desserts2, .price-Desserts3,
+    .price-sauces1, .price-sauces2, .price-sauces3,
+    .price-Combo1, .price-Combo2, .price-Combo3{
+        font-size: 10px;
+    }
+    .Choose-popular1, .Choose-popular2, .Choose-popular3,
+    .Choose-pizza1, .Choose-pizza2, .Choose-pizza3,
+    .Choose-snacks1, .Choose-snacks2, .Choose-snacks3,
+    .Choose-Drinks1, .Choose-Drinks2, .Choose-Drinks3,
+    .Choose-Desserts1, .Choose-Desserts2, .Choose-Desserts3,
+    .Choose-sauces1, .Choose-sauces2, .Choose-sauces3,
+    .Choose-Combo1, .Choose-Combo2, .Choose-Combo3{
+        width: 30px;
+        height: 15px;
+        font-size: 7px;
+        left: 60%;
+        top: 85%;
+    }
+    .popular1, .pizza1, .snacks1, .Drinks1, 
+    .Desserts1, .sauces1, .Combo1{
+        left: 6%;
+    }
+    .popular2, .pizza2, .snacks2, .Drinks2, 
+    .Desserts2, .sauces2, .Combo2{
+        left: 37%;
+    }
+    .Reviews-about-us{
+        font-size: 15px;
+        left: 5%;
+    }
+    .Reviews1-card{
+        left: 3.5%;
+        width: 350px;
+        height: 200px;
+    }
+    .Reviews2-card{
+        display: none;
+    }
+    .Reviews3-card{
+        display: none;
+    }
+    .user2{
+        top: 10%;
+        left: 2%;
+        width: 40px;
+        height: 40px;
+    }
+    .user2-name{
+        font-size: 22px;
+        left: 15%;
+    }
+    .text-user2{
+        left: -25%;
+        font-size: 13px;
+    }
+    #footer{
+        height: 100px;
+    }
+    .Text-footer{
+        left: 10%;
+        font-size: 15px;
+    }
+    .instagram{
+        left: 10%;
+        width: 20px;
+        height: 20px;
+    }
+    .youtube{
+        width: 20px;
+        height: 20px;
+        left: 16%;
+    }
+    .twiter{
+        width: 20px;
+        height: 20px;
+        left: 21%;
+    }
+    .tg{
+        width: 20px;
+        height: 20px;
+        left: 26.5%; 
+    }
+    .Work-with-us{
+        font-size: 15px;
+        top: 30%;
+    }
+    .number{
+        font-size: 10px;
+        top: 48%;
+    }
+    .email{
+        font-size: 10px;
+        top: 60%;
+    }
+    .floating-btn{
+        width: 20px;
+        height: 20px;
+    }
+}

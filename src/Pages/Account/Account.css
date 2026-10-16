@@ -1,0 +1,205 @@
+/* Стили ТОЛЬКО для страницы аккаунта, все селекторы уникальны */
+.account-page {
+  background-color: black;
+  min-height: 100vh;
+  position: relative;
+}
+
+.account-page a {
+  text-decoration: none;
+  color: white;
+}
+
+.account-btn-back {
+  background-color: inherit;
+  padding-top: 20px;
+  padding-left: 10px;
+  width: 220px;
+  height: 35px;
+  font-size: 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.account-avatar {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-position: center;
+}
+
+.account-name-label,
+.account-second-name-label,
+.account-number-label,
+.account-mail-label,
+.account-birthday-label,
+.account-city-label {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+}
+
+/* ─── Имя ─── */
+.account-name-label { top: 15%; left: 14%; font-size: 25px; }
+.account-name {
+  position: absolute;
+  top: 15%;
+  left: 18%;
+  font-size: 25px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* ─── Фамилия ─── */
+.account-second-name-label { top: 23%; left: 14%; font-size: 25px; }
+.account-second-name {
+  position: absolute;
+  top: 23%;
+  left: 21%;
+  font-size: 25px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* ─── Номер телефона ─── */
+.account-number-label { top: 35%; left: 3%; font-size: 35px; }
+.account-number {
+  position: absolute;
+  top: 35.5%;
+  left: 18%;
+  color: white;
+  font-size: 30px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* ─── Email (только для чтения) ─── */
+.account-mail-label { top: 42%; left: 3%; font-size: 35px; }
+.account-mail {
+  position: absolute;
+  top: 42.2%;
+  left: 21%;
+  color: white;
+  font-size: 30px;
+}
+
+/* ─── День рождения ─── */
+.account-birthday-label { top: 49%; left: 3%; font-size: 35px; }
+.account-birthday-wrap {
+  position: absolute;
+  top: 49.5%;
+  left: 17%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.account-birthday {
+  font-size: 26px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+  color-scheme: dark;
+}
+.account-god {
+  color: white;
+  font-size: 25px;
+}
+
+/* ─── Город ─── */
+.account-city-label { top: 56%; left: 3%; font-size: 35px; }
+.account-city {
+  position: absolute;
+  top: 56.5%;
+  left: 20%;
+  color: white;
+  font-size: 30px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+/* ─── Кнопка «Сохранить» ─── */
+.account-save {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  width: 300px;
+  height: 70px;
+  border: 1px solid white;
+  background-color: inherit;
+  border-radius: 12px;
+  color: antiquewhite;
+  font-size: 20px;
+  cursor: pointer;
+}
+.account-save:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Адаптив ─── */
+@media (max-width: 1440px) {
+  .account-name { left: 19%; }
+  .account-second-name { left: 23%; }
+  .account-number { left: 23%; }
+  .account-mail { left: 26.5%; }
+  .account-birthday-wrap { left: 21%; }
+  .account-city { left: 25.5%; }
+}
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .account-name-label { left: 19%; }
+  .account-name { left: 25%; }
+  .account-second-name-label { left: 19%; }
+  .account-second-name { left: 30.5%; }
+  .account-number { left: 30%; }
+  .account-mail { top: 42.5%; left: 35%; }
+  .account-birthday-wrap { left: 28%; }
+  .account-city { left: 34%; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .account-name-label { left: 23%; }
+  .account-name { left: 31%; }
+  .account-second-name-label { left: 23%; }
+  .account-second-name { left: 38.5%; }
+  .account-number { left: 39%; }
+  .account-mail { top: 42.3%; left: 46%; }
+  .account-birthday-wrap { left: 36%; }
+  .account-city { left: 44%; }
+}
+
+@media (min-width: 320px) and (max-width: 760px) {
+  .account-btn-back { padding-left: 0; }
+  .account-avatar { width: 90px; height: 90px; }
+  .account-name-label { top: 10%; left: 27%; }
+  .account-name { top: 10%; left: 44%; }
+  .account-second-name-label { top: 16%; left: 27%; }
+  .account-second-name { top: 16%; left: 59.5%; }
+  .account-number-label { top: 37%; font-size: 22px; }
+  .account-number { top: 37.2%; left: 50%; font-size: 20px; }
+  .account-mail-label { top: 43%; font-size: 22px; }
+  .account-mail { top: 43.5%; left: 58%; font-size: 16px; }
+  .account-birthday-label { top: 50%; font-size: 22px; }
+  .account-birthday-wrap { top: 50.2%; left: 46%; }
+  .account-god { font-size: 22px; }
+  .account-city-label { top: 57%; font-size: 22px; }
+  .account-city { top: 57.4%; left: 56%; font-size: 20px; }
+  .account-save { font-size: 16px; width: 240px; }
+}
