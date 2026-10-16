@@ -95,14 +95,14 @@ const Home = () => {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Pizzeria/">
       <Routes>
-        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
         <Route path="/bascet" element={<Basket />}/>
         <Route path="/logo" element={<Logo />}/>
         <Route path="/register" element={<Register />} />
         <Route path="/account" element={<Account />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
