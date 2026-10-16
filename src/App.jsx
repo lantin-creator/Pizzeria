@@ -2,7 +2,7 @@ import './App.css';
 import Btn from './components/Btn/btn';
 import Menu from './components/Menu/Menu';
 import Catalog from './components/catalog/catalog';
-import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Link, Route, HashRouter as Router, Routes } from 'react-router-dom';
 import Basket from './Pages/Bascet/bascet';
 import BtnFloat from './components/Btn/btn float';
 import NotFound from './Pages/404/NotFound';
@@ -95,7 +95,7 @@ const Home = () => {
 
 const App = () => {
   return (
-    <Router basename="/Pizzeria/">
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bascet" element={<Basket />}/>
