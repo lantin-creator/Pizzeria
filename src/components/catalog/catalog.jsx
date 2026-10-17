@@ -9,7 +9,7 @@ const Catalog = () =>{
               Name='popular1-name'
               childName='Пицца пепперони'
               Img1='popular1-imge'
-              Price='price1App'
+              Price='price1APP'
               childPrice='От 400 Руб.'
               Choose='Choose-popular1'
             />
@@ -18,7 +18,7 @@ const Catalog = () =>{
               Name='popular2-name'
               childName='Пицца 4 сыра'
               Img1='popular2-imge'
-              Price='price2App'
+              Price='price2APP'
               childPrice='От 480 Руб.'
               Choose='Choose-popular2'
             />

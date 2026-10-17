@@ -158,7 +158,7 @@ a{
     height: 100px;
     background-color: rgba(76, 76, 76, 0.4);
     z-index: 1;
-    margin-top: calc(70vh - 100px);
+    margin-top: calc(75vh - 100px);
 }
 .popular, .pizza, .snacks, .drinks, 
 .Desserts, .Sauces, .Combo, .Reviews, .Callback {
@@ -247,7 +247,7 @@ a{
     top: 23%;
     left: 17%; 
 }
-.price1App{
+.price1APP{
     position: absolute;
     top: 87%;
     left: 7%;
@@ -298,7 +298,7 @@ a{
     top: 23%;
     left: 17%; 
 }
-.price2App{
+.price2APP{
     position: absolute;
     top: 87%;
     left: 7%;
@@ -1389,6 +1389,15 @@ a{
     background-color: black;
     position: relative;
 }
+.Reviews-conteiner{
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    gap: 55px;
+    left: 5%;
+}
 .Reviews-about-us{
     position: absolute;
     top: 15%;
@@ -1397,10 +1406,7 @@ a{
     color: white;
 }
 .Reviews1-card{
-    position: absolute;
     position: relative;
-    top: 24%;
-    left: 15%;
     width: 400px;
     height: 200px;
     border-radius: 25px;
@@ -1483,18 +1489,12 @@ a{
     white-space: pre;
 }
 .Reviews2-card{
-    position: absolute;
-    top: 30%;
-    left: 40%;
     width: 410px;
     height: 200px;
     border-radius: 25px;
     background-color: rgba(217, 217, 217, 0.2);
 }
 .Reviews3-card{
-    position: absolute;
-    top: 30%;
-    left: 65%;
     width: 410px;
     height: 200px;
     border-radius: 25px;
@@ -1582,7 +1582,7 @@ a{
     color: #FFFFFF;
     opacity: 50%;
 }
-@media (max-width: 1440px){
+@media (max-width: 1770px){
     .user{
         position: absolute;
         top: 4%;
@@ -1603,12 +1603,7 @@ a{
     }
     .btn-order{
         left: 10%;
-    }
-    .Reviews1-card{
-        left: 10%;
-    }
-    .Reviews3-card{
-        left: 70%;
+        top: 41%;
     }
     .popular, .pizza, .snacks, .drinks, 
     .Desserts, .Sauces, .Combo, .Reviews, .callback {
@@ -1620,7 +1615,7 @@ a{
     z-index: 1;
     }
 }
-@media (min-width: 1024px) and (max-width: 1430px){
+@media (min-width: 1240px) and (max-width: 1430px){
     .name-logo{
         left: 12%;
     }
@@ -1637,14 +1632,20 @@ a{
     .hot, .like, .medal{
         top: 5%;
     }
-    .Over1500{
-        left: 5%;
-    }
     .like{
         left: 45%;
     }
+    #popular-catalog,
+    #pizza-catalog,
+    #snacks-catalog,
+    #Drinks-catalog,
+    #Desserts-catalog,
+    #sauces-catalog,
+    #Combo-catalog {
+        height: 350px;
+    }
     .popular, .pizza, .snacks, .drinks, 
-    .Desserts, .Sauces, .Combo, .Reviews, .callback {
+    .Desserts, .Sauces, .Combo, .Reviews, .Callback {
     position: static;
     padding-left: 0px;
     color: white;
@@ -1660,11 +1661,12 @@ a{
     .Desserts2, .sauces2, .Combo2{
         left: 35.5%;
     }
-    .Reviews1-card{
-        left: 0;
+    .Reviews-conteiner{
+        width: 90%;
+        gap: 110px;
     }
     .Reviews3-card{
-        left: 80%;
+        display: none;
     }
     .Text-footer{
         left: 20%;
@@ -1682,7 +1684,7 @@ a{
         left: 29%;
     }
 }
-@media (min-width: 768px) and (max-width: 1024px){
+@media (min-width: 850px) and (max-width: 1240px){
     .name-logo{
         left: 14%;
     }
@@ -1716,7 +1718,6 @@ a{
     }
     .Over1500{
         top: 45%;
-        left: 3%;
     }
     .medal{
         top: 5%;
@@ -1730,10 +1731,25 @@ a{
         top: 57%;
     }
     .btn-order{
-        top: 53.5%;
+        top: 40.5%;
+    }
+    #popular-catalog,
+    #pizza-catalog,
+    #snacks-catalog,
+    #Drinks-catalog,
+    #Desserts-catalog,
+    #sauces-catalog,
+    #Combo-catalog {
+        height: 250px;
+    }
+    #snacks-catalog{
+        margin-top: 200px;
+    }
+    #Desserts-catalog, #Drinks-catalog{
+        margin-top: 100px;
     }
     .popular, .pizza, .snacks, .drinks, 
-    .Desserts, .Sauces, .Combo, .Reviews, .callback {
+    .Desserts, .Sauces, .Combo, .Reviews, .Callback {
     position: static;
     padding-left: 0px;
     color: white;
@@ -1815,16 +1831,6 @@ a{
         font-size: 25px;
         left: 5%;
     }
-    .Reviews1-card{
-        left: 0;
-        width: 350px;
-        height: 200px;
-    }
-    .Reviews2-card{
-        left: 50%;
-        width: 350px;
-        height: 200px;
-    }
     .Reviews3-card{
         display: none;
     }
@@ -1838,7 +1844,7 @@ a{
         left: 11%;
     }
     .text-user2{
-        left: -23%;
+        left: 3%;
         font-size: 14px;
     }
     .Text-footer{
@@ -1849,19 +1855,19 @@ a{
         left: 10%;
     }
     .youtube{
-        left: 15%;
+        left: 13%;
     }
     .twiter{
-        left: 19.5%;
+        left: 15.5%;
     }
     .tg{
-       left: 24%; 
+       left: 18%; 
     }
     .Work-with-us{
         left: 50%;
         font-size: 25px;
     }
-    .number{
+    .numberApp{
         left: 50%;
         font-size: 25px;
         top: 46%;
@@ -1872,7 +1878,7 @@ a{
         font-size: 25px;
     }
 }
-@media (min-width: 320px) and (max-width: 700px){
+@media (min-width: 320px) and (max-width: 850px){
     .logo{
         width: 40px;
         height: 40px;
@@ -1919,7 +1925,6 @@ a{
     }
     .Over1500{
         top: 43%;
-        left: 5%;
         font-size: 7px;
     }
     .medal{
@@ -1936,22 +1941,42 @@ a{
         font-size: 7px;
     }
     .btn-order{
-        top: 47%;
+        top: 36%;
         width: 100px;
         height: 40px;
         font-size: 13px;
     }
     .menu{
-        gap: 10px;
+        gap: 5px;
+        height: 60px;
+    }
+    #popular-catalog,
+    #pizza-catalog,
+    #snacks-catalog,
+    #Drinks-catalog,
+    #Desserts-catalog,
+    #sauces-catalog,
+    #Combo-catalog {
+        height: 150px;
+    }
+    #snacks-catalog{
+        margin-top: 150px;
+    }
+    #Desserts-catalog, #Drinks-catalog, #sauces-catalog,
+    #Combo-catalog{
+        margin-top: 70px;
     }
     .popular, .pizza, .snacks, .drinks, 
-    .Desserts, .Sauces, .Combo, .Reviews, .callback{
+    .Desserts, .Sauces, .Combo, .Reviews{
     position: static;
     padding-left: 0px;
     color: white;
     font-size: 9px;
     cursor: pointer;
     z-index: 1;
+    }
+    .Callback{
+        display: none;
     }
     .popular{
         font-size: 8px;
@@ -1976,7 +2001,7 @@ a{
         width: 100px;
         height: 150px;
     }
-    .popular1-name, .popular2-name, .popula3-name,
+    .popular1-name, .popular2-name, .popular3-name,
     .pizza1-name, .pizza2-name, .pizza3-name,
     .snacks1-name, .snacks2-name, .snacks3-name,
     .Drinks1-name, .Drinks2-name, .Desserts3-name,
@@ -2006,7 +2031,7 @@ a{
         height: 60px;
         top: 33%;
     }
-     .price1, .price2, .price3,
+    .price1APP, .price2APP, .price3,
     .price-pizza1, .price-pizza2, .price-pizza3,
     .price-snacks1, .price-snacks2, .price-snacks3,
     .price-Drinks1, .price-Drinks2, .price-Drinks3,
@@ -2040,15 +2065,7 @@ a{
         font-size: 15px;
         left: 5%;
     }
-    .Reviews1-card{
-        left: 3.5%;
-        width: 350px;
-        height: 200px;
-    }
-    .Reviews2-card{
-        display: none;
-    }
-    .Reviews3-card{
+    .Reviews2-card, .Reviews3-card{
         display: none;
     }
     .user2{
@@ -2062,8 +2079,28 @@ a{
         left: 15%;
     }
     .text-user2{
-        left: -25%;
-        font-size: 13px;
+        left: 3%;
+        font-size: 11px;
+    }
+    .star1, .star2, .star3, .star4{
+        width: 12px;
+        height: 12px;
+        top: 17.5%;
+    }
+    .star1{
+        left: 75%;
+    }
+    .star2{
+        left: 79%;
+    }
+    .star3{
+        left: 84%;
+    }
+    .star4{
+        left: 89%;
+    }
+    .star5{
+        display: none;
     }
     #footer{
         height: 100px;
@@ -2096,7 +2133,7 @@ a{
         font-size: 15px;
         top: 30%;
     }
-    .number{
+    .numberApp{
         font-size: 10px;
         top: 48%;
     }
@@ -2107,5 +2144,16 @@ a{
     .floating-btn{
         width: 20px;
         height: 20px;
+    }
+}
+@media (max-height: 820px){
+    .Delivery{
+        top: 18%;
+    }
+    .min{
+        top: 21%;
+    }
+    .plus-cards{
+        top: 25%;
     }
 }

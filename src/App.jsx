@@ -47,7 +47,7 @@ const Home = () => {
         </div>
         <Btn href = "#catalog" className = "btn-order" children = "Заказать пиццу"/>
         <Menu onOpenCallback={() => setIsCallbackOpen(true)} />
-        <BtnFloat href = "#main" className = "floating-btn" visible={FloatingBtn}/>
+        <BtnFloat to = "#main" className = "floating-btn" visible={FloatingBtn}/>
       </div>
 
       <div id="catalog">
@@ -56,22 +56,24 @@ const Home = () => {
 
       <div id="Reviews-about-us">
         <h1 className="Reviews-about-us-title">Отзывы о нас</h1>
-        <div className="Reviews1-card">
-          <div className="user2"></div>
-          <div className="user2-name">Мария Поподько</div>
-          <div className="star1"></div>
-          <div className="star2"></div>
-          <div className="star3"></div>
-          <div className="star4"></div>
-          <div className="star5"></div>
-          <pre className="text-user2">
+        <div className="Reviews-conteiner">
+          <div className="Reviews1-card">
+            <div className="user2"></div>
+            <div className="user2-name">Мария Поподько</div>
+            <div className="star1"></div>
+            <div className="star2"></div>
+            <div className="star3"></div>
+            <div className="star4"></div>
+            <div className="star5"></div>
+            <pre className="text-user2">
             {`Доставили быстро, все доставлено в целости 
 и сохранности. Пицца тёплая. Сервисом оста- 
 -лись довольны`}
           </pre>
+          </div>
+          <div className="Reviews2-card"></div>
+          <div className="Reviews3-card"></div>
         </div>
-        <div className="Reviews2-card"></div>
-        <div className="Reviews3-card"></div>
       </div>
 
       <CallbackModal
