@@ -7,14 +7,14 @@ const Logo = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn, loading, message } = useSignIn();
-  const navigate = useNavigate(); // ← получаем функцию
+  const navigate = useNavigate();
 
   async function handleSignIn(e) {
     e.preventDefault();
     const result = await signIn({ email, password });
 
     if (result.success) {
-      navigate("/account"); // ← ведём на /account, а не на /profile
+      navigate("/account");
     }
   }
 

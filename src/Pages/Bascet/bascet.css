@@ -132,7 +132,7 @@ body{
     border-radius: 12px;
     box-shadow: 0px 3px 10px #FF5900;
 }
-.Name{
+.Name-bascet{
     color: white;
     font-size: 30px;
     position: absolute;
@@ -395,7 +395,7 @@ body{
         min-height: 500px;
         top: 12%;
     }
-    .Name{
+    .Name-bascet{
         font-size: 22px;
         top: 3%;
         left: 5%;
@@ -589,7 +589,7 @@ body{
         min-height: 450px;
         padding: 15px;
     }
-    .Name{
+    .Name-bascet{
         font-size: 18px;
         top: 3%;
         left: 5%;
@@ -715,7 +715,7 @@ body{
         font-size: 18px;
     }
 }
-@media (min-width: 320px) and (max-width: 425px){
+@media (min-width: 320px) and (max-width: 768px){
    .back-text{
         top: 4%;
         left: 8%;
@@ -795,7 +795,7 @@ body{
         min-height: 400px;
         padding: 10px;
     }
-    .Name{
+    .Name-bascet{
         font-size: 14px;
         top: 2%;
         left: 2%;

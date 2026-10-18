@@ -24,7 +24,7 @@ const Menu = ({ onOpenCallback }) => {
         {menuItems.map((item) => (
           <Categories
             key={item.id}
-            href={item.isButton ? undefined : `#${item.id}`}
+            to={item.isButton ? undefined : `#${item.id}`}
             className={`${item.className} ${
               !item.isButton && activeSection === item.id ? 'active' : ''
             }`}
@@ -36,7 +36,7 @@ const Menu = ({ onOpenCallback }) => {
 
         <Categories
           needAnIcon={true}
-          href="/bascet"
+          to ="/bascet"
           classNameCard="card-basket"
           className="Basket"
           classNameText="basket"

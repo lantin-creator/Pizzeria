@@ -1,15 +1,12 @@
-/* Стили ТОЛЬКО для страницы аккаунта, все селекторы уникальны */
 .account-page {
   background-color: black;
   min-height: 100vh;
   position: relative;
 }
-
 .account-page a {
   text-decoration: none;
   color: white;
 }
-
 .account-btn-back {
   background-color: inherit;
   padding-top: 20px;
@@ -21,7 +18,6 @@
   border: none;
   cursor: pointer;
 }
-
 .account-avatar {
   position: absolute;
   top: 10%;
@@ -32,7 +28,6 @@
   object-fit: cover;
   background-position: center;
 }
-
 .account-name-label,
 .account-second-name-label,
 .account-number-label,
@@ -43,8 +38,6 @@
   color: white;
   font-weight: bold;
 }
-
-/* ─── Имя ─── */
 .account-name-label { top: 15%; left: 14%; font-size: 25px; }
 .account-name {
   position: absolute;
@@ -57,8 +50,6 @@
   border-radius: 8px;
   padding: 4px 8px;
 }
-
-/* ─── Фамилия ─── */
 .account-second-name-label { top: 23%; left: 14%; font-size: 25px; }
 .account-second-name {
   position: absolute;
@@ -71,8 +62,6 @@
   border-radius: 8px;
   padding: 4px 8px;
 }
-
-/* ─── Номер телефона ─── */
 .account-number-label { top: 35%; left: 3%; font-size: 35px; }
 .account-number {
   position: absolute;
@@ -85,8 +74,6 @@
   border-radius: 8px;
   padding: 4px 8px;
 }
-
-/* ─── Email (только для чтения) ─── */
 .account-mail-label { top: 42%; left: 3%; font-size: 35px; }
 .account-mail {
   position: absolute;
@@ -95,8 +82,6 @@
   color: white;
   font-size: 30px;
 }
-
-/* ─── День рождения ─── */
 .account-birthday-label { top: 49%; left: 3%; font-size: 35px; }
 .account-birthday-wrap {
   position: absolute;
@@ -119,8 +104,6 @@
   color: white;
   font-size: 25px;
 }
-
-/* ─── Город ─── */
 .account-city-label { top: 56%; left: 3%; font-size: 35px; }
 .account-city {
   position: absolute;
@@ -133,8 +116,6 @@
   border-radius: 8px;
   padding: 4px 8px;
 }
-
-/* ─── Кнопка «Сохранить» ─── */
 .account-save {
   position: absolute;
   top: 80%;
@@ -152,8 +133,6 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
-
-/* ─── Адаптив ─── */
 @media (max-width: 1440px) {
   .account-name { left: 19%; }
   .account-second-name { left: 23%; }
@@ -162,7 +141,6 @@
   .account-birthday-wrap { left: 21%; }
   .account-city { left: 25.5%; }
 }
-
 @media (min-width: 1024px) and (max-width: 1439px) {
   .account-name-label { left: 19%; }
   .account-name { left: 25%; }
@@ -173,7 +151,6 @@
   .account-birthday-wrap { left: 28%; }
   .account-city { left: 34%; }
 }
-
 @media (min-width: 768px) and (max-width: 1023px) {
   .account-name-label { left: 23%; }
   .account-name { left: 31%; }
@@ -184,22 +161,55 @@
   .account-birthday-wrap { left: 36%; }
   .account-city { left: 44%; }
 }
-
-@media (min-width: 320px) and (max-width: 760px) {
-  .account-btn-back { padding-left: 0; }
-  .account-avatar { width: 90px; height: 90px; }
-  .account-name-label { top: 10%; left: 27%; }
-  .account-name { top: 10%; left: 44%; }
-  .account-second-name-label { top: 16%; left: 27%; }
-  .account-second-name { top: 16%; left: 59.5%; }
+@media (min-width: 320px) and (max-width: 768px) {
+  .account-btn-back{ 
+    padding-left: 0;
+  }
+  .account-avatar{ 
+    width: 90px; 
+    height: 90px; 
+  }
+  .account-name-label{ 
+    top: 12%; 
+    left: 25%; 
+  }
+  .account-name{ 
+    width: 200px;
+    top: 10%; 
+    left: 44%; 
+  }
+  .account-second-name-label{ 
+    top: 18%; 
+    left: 25%; 
+  }
+  .account-second-name{ 
+    width: 162px;
+    top: 17%; 
+    left: 52.5%;
+  }
   .account-number-label { top: 37%; font-size: 22px; }
-  .account-number { top: 37.2%; left: 50%; font-size: 20px; }
+  .account-number{ 
+    width: 200px;
+    top: 37%; 
+    left: 45%; 
+    font-size: 20px; 
+  }
   .account-mail-label { top: 43%; font-size: 22px; }
-  .account-mail { top: 43.5%; left: 58%; font-size: 16px; }
+  .account-mail{ 
+    top: 43%; 
+    left: 52%; 
+    font-size: 20px; }
   .account-birthday-label { top: 50%; font-size: 22px; }
-  .account-birthday-wrap { top: 50.2%; left: 46%; }
+  .account-birthday-wrap{ 
+    top: 49%; 
+    left: 41%; 
+  }
   .account-god { font-size: 22px; }
   .account-city-label { top: 57%; font-size: 22px; }
-  .account-city { top: 57.4%; left: 56%; font-size: 20px; }
+  .account-city{ 
+    width: 200px;
+    top: 56.5%; 
+    left: 50%; 
+    font-size: 20px; }
   .account-save { font-size: 16px; width: 240px; }
 }

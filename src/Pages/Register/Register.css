@@ -95,8 +95,28 @@ a {
     position: relative;
     width: 50px;
     height: 50px;
-    margin-top: 20px;
-    left: 11%;
+    display: inline-block; 
+    cursor: pointer;
+    margin-top: 15px;
+    left: 10%;
+}
+.hidden-file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+.upload-icon {
+    width: 100%;
+    height: 100%;
+    background-image: url(../../assets/upload.png);
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
 }
 .Photo {
     position: absolute;
@@ -315,15 +335,22 @@ a {
         width: 170px;
     }
     .upload-container {
-        left: 54%;
+        left: 40%;
+        margin-top: 16px;
+        width: 25px;
+        height: 25px;
     }
     .reg-title {
         font-size: 25px;
         left: 47%;
     }
+    .Your-photo{
+        font-size: 25px;
+    }
     .name {
         top: 12%;
         left: 5%;
+        font-size: 12px;
     }
     .Name {
         top: 16%;
@@ -332,6 +359,7 @@ a {
     .Birthday {
         left: 4%;
         top: 21%;
+        font-size: 12px;
     }
     .birthday {
         top: 25%;
@@ -340,6 +368,7 @@ a {
     .mail {
         top: 30%;
         left: 4%;
+        font-size: 12px;
     }
     .Mail {
         top: 34%;
@@ -348,6 +377,7 @@ a {
     .second-name {
         top: 39%;
         left: 4%;
+        font-size: 12px;
     }
     .Second-name {
         top: 43%;
@@ -356,6 +386,7 @@ a {
     .reg-number {
         top: 48%;
         left: 4%;
+        font-size: 12px;
     }
     .Number {
         top: 52%;
@@ -364,6 +395,7 @@ a {
     .addres {
         top: 56.5%;
         left: 4%;
+        font-size: 12px;
     }
     .City {
         top: 61%;
@@ -380,6 +412,7 @@ a {
     .Password {
         top: 75%;
         left: 4%;
+        font-size: 12px;
     }
     .reg-password {
         top: 80%;

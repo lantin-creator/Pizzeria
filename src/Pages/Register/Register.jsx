@@ -43,14 +43,17 @@ const Register = () => {
         <div className="reg-title">Регистрация</div>
 
         <div className="Your-photo">Ваше фото:</div>
-        <div className="upload-container">
-          <input
-            type="file"
-            className="upload-button"
-            accept="image/*"
-            onChange={(e) => setAvatarFile(e.target.files[0])}
-          />
-        </div>
+        <label className="upload-container">
+  {/* Прозрачный инпут на весь размер контейнера */}
+  <input
+    type="file"
+    accept="image/*"
+    onChange={(e) => setAvatarFile(e.target.files[0])}
+    className="hidden-file-input"
+  />
+  {/* Иконка, которая будет видна */}
+  <div className="upload-icon"></div>
+</label>
 
         <div className="Birthday"><h1>Дата рождения:</h1></div>
         <input

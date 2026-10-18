@@ -53,7 +53,7 @@ const Basket = () => {
             </div>
 
             <div className="Positions">
-                <div className="Name">Наименование</div>
+                <div className="Name-bascet">Наименование</div>
                 <div className="Volume-Length">Обьем/Длина</div>
                 <div className="kol-vo">Количество</div>
                 <div className="price">Цена</div>

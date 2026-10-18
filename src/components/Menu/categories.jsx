@@ -1,6 +1,8 @@
+import { HashLink as Link } from 'react-router-hash-link';
+
 const Categories = (props) => {
   const {
-    href = '',
+    to = '',
     className = '',
     childrens,
     needAnIcon,
@@ -12,12 +14,12 @@ const Categories = (props) => {
 
   if (needAnIcon) {
     return (
-      <a href={href}>
+      <Link to={to}>
         <div className={classNameCard}>
           <div className={className}></div>
           <div className={classNameText}>{childrens}</div>
         </div>
-      </a>
+      </Link>
     );
   }
 
@@ -30,9 +32,9 @@ const Categories = (props) => {
   }
 
   return (
-    <a href={href}>
+    <Link to={to}>
       <div className={className}>{childrens}</div>
-    </a>
+    </Link>
   );
 };
 
