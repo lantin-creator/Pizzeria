@@ -24,21 +24,41 @@ router.get("/", async (req, res) => {
 router.post("/items", async (req, res) => {
   const variantId = toInt(req.body.variantId);
   const quantity = toInt(req.body.quantity ?? 1);
+
   if (!(variantId > 0) || !(quantity >= 1 && quantity <= 50)) {
     return res.status(400).json({ error: "BAD_INPUT" });
   }
 
-  const added = await prisma.$executeRaw`
-    insert into cart_items (user_id, variant_id, quantity)
-    select ${req.userId}::uuid, v.id, ${quantity}::int
-    from product_variants v
-    join products p on p.id = v.product_id
-    where v.id = ${variantId}::bigint and p.is_active
-    on conflict (user_id, variant_id)
-    do update set quantity = least(cart_items.quantity + excluded.quantity, 50)`;
-  if (added === 0) return res.status(404).json({ error: "VARIANT_NOT_FOUND" });
+  try {
+    console.log("[CART] 1. Before INSERT");
 
-  res.json(await getCart(req.userId));
+    const added = await prisma.$executeRaw`
+      insert into cart_items (user_id, variant_id, quantity)
+      select ${req.userId}::uuid, v.id, ${quantity}::int
+      from product_variants v
+      join products p on p.id = v.product_id
+      where v.id = ${variantId}::bigint and p.is_active
+      on conflict (user_id, variant_id)
+      do update set quantity = least(cart_items.quantity + excluded.quantity, 50)
+    `;
+
+    console.log("[CART] 2. INSERT completed:", added);
+
+    if (added === 0) {
+      return res.status(404).json({ error: "VARIANT_NOT_FOUND" });
+    }
+
+    console.log("[CART] 3. Before getCart");
+
+    const cart = await getCart(req.userId);
+
+    console.log("[CART] 4. getCart completed");
+
+    res.json(cart);
+  } catch (error) {
+    console.error("[CART] FAILED:", error);
+    res.status(500).json({ error: "CART_OPERATION_FAILED" });
+  }
 });
 
 router.patch("/items/:variantId", async (req, res) => {

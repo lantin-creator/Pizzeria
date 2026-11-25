@@ -25,30 +25,60 @@ const useMenu = () => {
   }, []);
 
   useEffect(() => {
-    const sections = menuItems
-      .map((item) => document.getElementById(item.id))
-      .filter(Boolean);
+  const visibleSections = new Map();
+  const observedSections = new Set();
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        let maxRatio = 0;
-        let mostVisible = null;
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            mostVisible = entry.target;
-          }
-        });
-        if (mostVisible && maxRatio >= 1) {
-          setActiveSection(mostVisible.id);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleSections.set(
+            entry.target.id,
+            entry.intersectionRatio
+          );
+        } else {
+          visibleSections.delete(entry.target.id);
         }
-      },
-      { threshold: [0.5, 0.6, 0.8, 1] }
-    );
+      });
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
+      const mostVisible = [...visibleSections.entries()]
+        .sort((a, b) => b[1] - a[1])[0];
+
+      setActiveSection(mostVisible ? mostVisible[0] : "");
+    },
+    {
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+    }
+  );
+
+  const observeSections = () => {
+    menuItems
+      .filter((item) => !item.isButton)
+      .forEach((item) => {
+        const section = document.getElementById(item.id);
+
+        if (section && !observedSections.has(section)) {
+          observedSections.add(section);
+          observer.observe(section);
+        }
+      });
+  };
+  observeSections();
+
+  const mutationObserver = new MutationObserver(() => {
+    observeSections();
+  });
+
+  mutationObserver.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
+
+  return () => {
+    observer.disconnect();
+    mutationObserver.disconnect();
+  };
+}, []);
 
   return { isMenuSticky, activeSection };
 };

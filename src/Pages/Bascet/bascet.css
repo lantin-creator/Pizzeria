@@ -1,933 +1,520 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     background-color: black;
 }
-.bascet{
-    position: absolute;
-    top: 10%;
-    left: 5%;
+
+.basket-page {
+    min-height: 100vh;
+    padding: 35px 5%;
     color: white;
+}
+
+
+.basket-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 45px;
+}
+
+.back-card {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.back-arrow {
+    font-size: 45px;
+    line-height: 1;
+}
+
+.back-text {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.bascet {
     font-size: 40px;
     font-weight: bolder;
 }
-.back{
-    position: absolute;
-    top: 2%;
-    left: 1%;
-    background-image: url(../../assets/chevron-left.png);
-    background-size: cover;
-    background-position: center;
-    width: 50px;
-    height: 50px;
+
+
+.basket-content {
+    display: grid;
+    grid-template-columns: minmax(250px, 0.8fr) minmax(500px, 1.7fr);
+    gap: 35px;
+    align-items: start;
 }
-.back-text{
-    position: absolute;
-    top: 3%;
-    left: 3%;
-    font-size: 25px;
+
+
+.basket-preview {
+    min-width: 0;
+}
+
+.Selected-items {
     color: white;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.basket-preview-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    max-height: 650px;
+    overflow-y: auto;
+    padding: 5px;
+}
+
+.basket-preview-card {
+    min-width: 0;
+    min-height: 200px;
+    padding: 12px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.basket-preview-text {
+    color: white;
+    font-size: 17px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.basket-preview-img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+.basket-preview-no-image {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    font-size: 14px;
+    text-align: center;
+}
+
+.basket-preview-quantity {
+    color: white;
+    font-size: 20px;
+}
+
+.basket-message {
+    color: white;
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.basket-error {
+    color: #ff6b35;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+
+.Positions {
+    min-width: 0;
+    padding: 25px;
+    border: 1px solid white;
+    border-radius: 12px;
+    background-color: black;
+    box-shadow: 0 3px 10px #ff5900;
+}
+
+.basket-table-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.basket-table {
+    width: 100%;
+}
+
+.basket-table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.1fr 0.8fr;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #777;
+
+    color: white;
+    font-size: 17px;
     font-weight: bold;
 }
-.back-card{
+
+.basket-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    max-height: 260px;
+    overflow-y: auto;
+
+    padding: 12px 5px 12px 0;
+}
+
+.basket-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.1fr 0.8fr;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+
+    color: white;
+    font-size: 16px;
+}
+
+.basket-product-name,
+.basket-product-size,
+.basket-product-price {
+    overflow-wrap: anywhere;
+}
+
+.basket-product-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.basket-product-quantity button {
+    width: 27px;
+    height: 27px;
+
+    border: 1px solid white;
+    border-radius: 6px;
+
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+
     cursor: pointer;
 }
-.Selected-items{
+
+.basket-product-quantity button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.basket-remove-button {
+    grid-column: 1 / -1;
+    justify-self: start;
+
+    padding: 5px 10px;
+    border: 1px solid #ff5900;
+    border-radius: 6px;
+
+    background: transparent;
+    color: #ff8a45;
+
+    cursor: pointer;
+}
+
+.basket-remove-button:hover {
+    background-color: #ff5900;
+    color: white;
+}
+
+.basket-remove-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+
+.basket-extra {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+}
+
+.promotional-code {
+    color: white;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.basket-promo-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.promotional-code-input {
+    width: 160px;
+    min-width: 0;
+    height: 35px;
+
+    padding: 5px 10px;
+
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    color: white;
+    font-size: 16px;
+}
+
+.promotional-code-input::placeholder {
+    color: #aaa;
+}
+
+.promotional-code-button {
+    min-height: 35px;
+    padding: 5px 12px;
+
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.promotional-code-button:hover {
+    background-color: #ff5900;
+}
+
+.Pizza-Coins {
     color: white;
     font-size: 25px;
-    position: absolute;
-    top: 20%;
-    left: 5%;
+    margin-bottom: 10px;
 }
-.card1{
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    width: 170px;
-    height: 200px;
-    background-color: inherit;
-    border: 1px solid white;
-    border-radius: 12px;
-}
-.card1-text{
-    text-align: center;
-    padding-top: 20px;
+
+.pizza-Coins {
     color: white;
     font-size: 20px;
+    margin-bottom: 10px;
 }
-.card1-img{
-    position: absolute;
-    top: 25%;
-    left: 20%;
-    width: 100px;
-    height: 100px;
-    background-image: url(../../assets/pepperoni-pizza.png);
-    background-size: cover;
-    background-position: center;
-}
-.Kol-vo{
-    font-size: 30px;
+
+.Write-off {
+    min-width: 90px;
+    min-height: 32px;
+    padding: 5px 12px;
+
     color: white;
-    position: absolute;
-    top: 82%;
-    left: 20%;
-}
-.Kol-vo2{
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 82%;
-    left: 20%;
-}
-.card2{
-    position: absolute;
-    top: 30%;
-    left: 20%;
-    width: 170px;
-    height: 200px;
-    background-color: inherit;
+    background-color: transparent;
     border: 1px solid white;
-    border-radius: 12px;
-}
-.card2-text{
-    text-align: center;
-    padding-top: 20px;
-    color: white;
-    font-size: 20px;
-}
-.card2-img{
-    position: absolute;
-    top: 25%;
-    left: 20%;
-    width: 100px;
-    height: 100px;
-    background-image: url(../../assets/cola.png);
-    background-size: cover;
-    background-position: center;
-}
-.Kol-vo1{
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 15%;
-    left: 65%;
-}
-.Kol2-vo2{
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 25%;
-    left: 65%;
-}
-.Positions{
-    position: absolute;
-    top: 15%;
-    left: 55%;
-    width: 800px;
-    height: 700px;
-    border: 1px solid white;
-    background-color: inherit;
-    border-radius: 12px;
-    box-shadow: 0px 3px 10px #FF5900;
-}
-.Name-bascet{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 4.3%;
-    left: 7%;
-}
-.Volume-Length{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 4.3%;
-    left: 35%;
-}
-.kol-vo{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 4.3%;
-    left: 62%;
-}
-.price{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 4.3%;
-    left: 85%;
-}
-.name1{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 15%;
-    left: 7%;
-}
-.volume-length1{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 15%;
-    left: 42%;
-}
-.kol-vo1{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 15%;
-    left: 70%;
-}
-.kol-vo-plus{
-    font-size: 30px;
-     position: absolute;
-    top: 83%;
-    left: 70%;
-    color: white;
-}
-.price1{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 15%;
-    left: 85%;
-}
-.name2{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 25%;
-    left: 7%;
-}
-.volume-length2{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 25%;
-    left: 42%;
-}
-.kol-vo2{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 25%;
-    left: 70%;
-}
-.price2{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 25%;
-    left: 85%;
-}
-.promotional-code{
-    color: white;
-    font-size: 40px;
-    position: absolute;
-    top: 38%;
-    left: 7%;
-}
-.promotional-code-input{
-    width: 200px;
-    height: 30px;
-    position: absolute;
-    top: 47%;
-    left: 7%;
-    background-color: inherit;
-    border: 1px solid white;
-    color: white;
-    font-size: 20px;
-}
-.promotional-code-button{
-    width: 100px;
-    height: 32px;
-    position: absolute;
-    top: 47%;
-    left: 32%;
-    color: white;
-    background-color: inherit;
-    border: 1px solid white;
+    border-radius: 8px;
+
     cursor: pointer;
 }
-.Pizza-Coins{
-    color: white;
-    font-size: 35px;
-    position: absolute;
-    top: 39%;
-    left: 60%;
+
+.Write-off:hover {
+    background-color: #ff5900;
 }
-.pizza-Coins{
-    color: white;
-    font-size: 25px;
-    position: absolute;
-    top: 48%;
-    left: 60%;
-}
-.Write-off{
+
+
+.basket-footer {
     display: flex;
-    width: 100px;
-    height: 30px;
-    position: absolute;
-    top: 55%;
-    left: 60%;
-    color: white;
-    border-radius: 12px;
-    background-color: inherit;
-    border: 1px solid white;
-    cursor: pointer;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
 }
-.Total{
-    color: white;
-    font-size: 40px;
-    position: absolute;
-    top: 65%;
-    left: 7%;
-}
-.total{
-    color: white;
-    font-size: 30px;
-    position: absolute;
-    top: 66.5%;
-    left: 23%;
-}
-.payment-button{
+
+.basket-total {
     display: flex;
-    width: 400px;
-    height: 60px;
-    position: absolute;
-    top: 85%;
-    left: 25%;
-    color: white;
-    border-radius: 12px;
-    background: linear-gradient(to bottom,#FFCC00, #FF6A00);
-    border: 1px solid white;
-    cursor: pointer;
-    justify-content: center;
     align-items: center;
+    gap: 20px;
 }
-@media (max-width: 1440px){
-    .back-text{
-        top: 3.3%;
-        left: 4%;
+
+.Total {
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.total {
+    color: white;
+    font-size: 27px;
+}
+
+.payment-button {
+    width: min(400px, 100%);
+    min-height: 55px;
+    align-self: center;
+
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+
+    border: 1px solid white;
+    border-radius: 12px;
+
+    background: linear-gradient(to bottom, #ffcc00, #ff6a00);
+
+    cursor: pointer;
+}
+
+.payment-button:hover:not(:disabled) {
+    filter: brightness(1.15);
+}
+
+.payment-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+.basket-preview-list::-webkit-scrollbar,
+.basket-rows::-webkit-scrollbar {
+    width: 6px;
+}
+
+.basket-preview-list::-webkit-scrollbar-thumb,
+.basket-rows::-webkit-scrollbar-thumb {
+    background-color: #ff5900;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 1024px) {
+    .basket-content {
+        grid-template-columns: 1fr;
     }
-    .Positions{
-        left: 40%;
+
+    .basket-preview-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-height: 350px;
+    }
+
+    .Positions {
+        width: 100%;
+    }
+
+    .basket-table-header {
+        font-size: 15px;
     }
 }
-@media (max-width: 1024px){
-    .back-text{
-        top: 3.3%;
-        left: 5%;
-        font-size: 24px;
+
+
+@media (max-width: 600px) {
+    .basket-page {
+        padding: 20px 4%;
     }
-    .back{
-        top: 2.5%;
-        width: 40px;
-        height: 40px;
+
+    .basket-header {
+        gap: 20px;
+        margin-bottom: 30px;
     }
-    .bascet{
+
+    .back-arrow {
         font-size: 35px;
     }
-    .Selected-items{
-        top: 17%;
+
+    .back-text {
+        font-size: 16px;
     }
-    .card1{
-        top: 25%;
-        left: 3.5%;
-        width: 150px;
-        height: 180px;
-    }
-    .card1-text{
-        padding-top: 0;
-        font-size: 18px;
-    }
-    .card1-img{
-        width: 80px;
-        height: 80px;
-        top: 30%;
-        left: 23%;
-    }
-    .Kol-vo{
-        top: 80%;
-        left: 12%;
-        font-size: 25px;
-    }
-    .Kol-vo1{
+
+    .bascet {
         font-size: 27px;
-        top: 12.5%;
-        left: 62%;
     }
-    .Kol2-vo2{
-        font-size: 27px;
-        top: 22%;
-        left: 62%;
+
+    .Selected-items {
+        font-size: 19px;
     }
-    .card2{
-        top: 25%;
-        left: 22%;
-        width: 150px;
-        height: 180px;
+
+    .basket-preview-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-height: 300px;
     }
-    .card2-text{
-        padding-top: 0;
-        font-size: 18px;
+
+    .basket-preview-card {
+        min-height: 160px;
     }
-    .card2-img{
-        width: 80px;
-        height: 80px;
-        top: 30%;
-        left: 23%;
+
+    .basket-preview-img,
+    .basket-preview-no-image {
+        width: 75px;
+        height: 75px;
     }
-    .Kol-vo2{
-        top: 80%;
-        left: 12%;
-        font-size: 25px;
+
+    .basket-preview-text {
+        font-size: 14px;
     }
-    .Positions{
-        left: 40%;
-        width: 550px;
-        height: auto;
-        min-height: 500px;
-        top: 12%;
-    }
-    .Name-bascet{
-        font-size: 22px;
-        top: 3%;
-        left: 5%;
-    }
-    .Volume-Length{
-        font-size: 22px;
-        top: 3%;
-        left: 33%;
-    }
-    .kol-vo{
-        font-size: 22px;
-        top: 3%;
-        left: 60%;
-    }
-    .price{
-        font-size: 22px;
-        top: 3%;
-        left: 85%;
-    }
-    .name1{
-        font-size: 22px;
-        top: 13%;
-        left: 5%;
-    }
-    .volume-length1{
-        font-size: 22px;
-        top: 13%;
-        left: 40%;
-    }
-    .kol-vo1{
-        font-size: 22px;
-        top: 13%;
-        left: 67%;
-    }
-    .price1{
-        font-size: 22px;
-        top: 13%;
-        left: 85%;
-    }
-    .name2{
-        font-size: 22px;
-        top: 23%;
-        left: 5%;
-    }
-    .volume-length2{
-        font-size: 22px;
-        top: 23%;
-        left: 40%;
-    }
-    .kol-vo2{
-        font-size: 22px;
-        top: 23%;
-        left: 67%;
-    }
-    .price2{
-        font-size: 22px;
-        top: 23%;
-        left: 85%;
-    }
-    .promotional-code{
-        font-size: 30px;
-        top: 38%;
-        left: 5%;
-    }
-    .promotional-code-input{
-        width: 160px;
-        height: 28px;
-        top: 46%;
-        left: 5%;
-        font-size: 18px;
-    }
-    .promotional-code-button{
-        width: 80px;
-        height: 30px;
-        top: 46%;
-        left: 30%;
-        font-size: 13px;
-    }
-    .Pizza-Coins{
-        font-size: 28px;
-        top: 38%;
-        left: 58%;
-    }
-    .pizza-Coins{
-        font-size: 22px;
-        top: 46%;
-        left: 58%;
-    }
-    .Write-off{
-        width: 80px;
-        height: 28px;
-        top: 52%;
-        left: 58%;
+
+    .basket-preview-quantity {
         font-size: 16px;
     }
-    .Total{
-        font-size: 32px;
-        top: 62%;
-        left: 5%;
-    }
-    .total{
-        font-size: 26px;
-        top: 63%;
-        left: 22%;
-    }
-    .payment-button{
-        width: 300px;
-        height: 50px;
-        top: 85%;
-        left: 20%;
-        font-size: 20px;
-    }
-}
-@media (min-width: 768px) and (max-width: 1024px){
-    .back-text{
-        top: 3.5%;
-        left: 6%;
-        font-size: 20px;
-    }
-    .back{
-        top: 2.8%;
-        width: 35px;
-        height: 35px;
-    }
-    .bascet{
-        font-size: 30px;
-        top: 9%;
-        left: 5%;
-    }
-    .Selected-items{
-        font-size: 20px;
-        top: 14%;
-        left: 5%;
-    }
-    .card1{
-        top: 20%;
-        left: 5%;
-        width: 135px;
-        height: 165px;
-    }
-    .card1-text{
-        font-size: 16px;
-        padding-top: 10px;
-    }
-    .card1-img{
-        width: 70px;
-        height: 70px;
-        top: 28%;
-        left: 24%;
-    }
-    .Kol-vo{
-        font-size: 20px;
-        top: 84%;
-        left: 25%;
-    }
-    .Kol-vo2{
-        font-size: 20px;
-        top: 84%;
-        left: 24%;
-    }
-    .card1 .kol-vo-plus{
-        font-size: 24px;
-        top: 80%;
-        left: 72%;
-    }
-    .card2{
-        top: 23%;
-        left: 45%;
-        width: 135px;
-        height: 165px;
-    }
-    .card2-text{
-        font-size: 16px;
-        padding-top: 10px;
-    }
-    .card2-img{
-        width: 70px;
-        height: 70px;
-        top: 28%;
-        left: 24%;
-    }
-    .card2{
-        font-size: 24px;
-        top: 20%;
-        left: 25%;
-    }
-    .Positions{
-        left: 5%;
-        top: 44%;
-        width: 90%;
-        min-height: 450px;
+
+    .Positions {
         padding: 15px;
     }
-    .Name-bascet{
-        font-size: 18px;
-        top: 3%;
-        left: 5%;
-    }
-    .Volume-Length{
-        font-size: 18px;
-        top: 3%;
-        left: 35%;
-    }
-    .kol-vo{
-        font-size: 18px;
-        top: 3%;
-        left: 62%;
-    }
-    .price{
-        font-size: 18px;
-        top: 3%;
-        left: 85%;
-    }
-    .name1{
-        font-size: 18px;
-        top: 13%;
-        left: 5%;
-    }
-    .volume-length1{
-        font-size: 18px;
-        top: 13%;
-        left: 38%;
-    }
-    .kol-vo1{
-        font-size: 18px;
-        top: 13%;
-        left: 65%;
-    }
-    .price1{
-        font-size: 18px;
-        top: 13%;
-        left: 87%;
-    }
-    .name1 + img{
-        width: 18px;
-        height: 18px;
-        top: 14%;
-        left: 57%;
-    }
-    .name2{
-        font-size: 18px;
-        top: 23%;
-        left: 5%;
-    }
-    .volume-length2{
-        font-size: 18px;
-        top: 23%;
-        left: 38%;
-    }
-    .kol-vo2{
-        font-size: 18px;
-        top: 23%;
-        left: 65%;
-    }
-    .price2{
-        font-size: 18px;
-        top: 23%;
-        left: 87%;
-    }
-    .name2 + img{
-        width: 18px;
-        height: 18px;
-        top: 24%;
-        left: 57%;
-    }
-    .promotional-code{
-        font-size: 24px;
-        top: 36%;
-        left: 5%;
-    }
-    .promotional-code-input{
-        width: 150px;
-        height: 26px;
-        top: 44%;
-        left: 5%;
-        font-size: 16px;
-    }
-    .promotional-code-button{
-        width: 75px;
-        height: 28px;
-        top: 44%;
-        left: 45%;
-        font-size: 14px;
-    }
-    .Pizza-Coins{
-        font-size: 24px;
-        top: 52%;
-        left: 5%;
-    }
-    .pizza-Coins{
-        font-size: 18px;
-        top: 59%;
-        left: 5%;
-    }
-    .Write-off{
-        width: 75px;
-        height: 26px;
-        top: 59%;
-        left: 35%;
-        font-size: 14px;
-    }
-    .Total{
-        font-size: 26px;
-        top: 68%;
-        left: 5%;
-    }
-    .total{
+
+    .basket-table-title {
         font-size: 22px;
-        top: 69%;
-        left: 25%;
     }
-    .payment-button{
-        width: 250px;
-        height: 45px;
-        top: 85%;
-        left: 18%;
-        font-size: 18px;
+
+    .basket-table-header {
+        grid-template-columns: 1.3fr 0.8fr 1fr 0.8fr;
+        gap: 5px;
+        font-size: 11px;
     }
-}
-@media (min-width: 320px) and (max-width: 768px){
-   .back-text{
-        top: 4%;
-        left: 8%;
-        font-size: 16px;
-    }
-    .back{
-        top: 3%;
-        width: 30px;
-        height: 30px;
-    }
-    .bascet{
-        font-size: 24px;
-        top: 8%;
-        left: 5%;
-    }
-    .Selected-items{
-        font-size: 18px;
-        top: 15%;
-        left: 5%;
-    }
-    .card1{
-        top: 22%;
-        left: 5%;
-        width: 120px;
-        height: 150px;
-    }
-    .card1-text{
-        font-size: 14px;
-        padding-top: 10px;
-    }
-    .card1-img{
-        width: 60px;
-        height: 60px;
-        top: 28%;
-        left: 25%;
-    }
-    .Kol-vo{
-        font-size: 18px;
-        top: 85.5%;
-        left: 25%;
-    }
-    .card1 .kol-vo-plus{
-        font-size: 20px;
-        top: 80%;
-        left: 72%;
-    }
-    .card2{
-        top: 22%;
-        left: 52%;
-        width: 120px;
-        height: 150px;
-    }
-    .card2-text{
-        font-size: 14px;
-        padding-top: 10px;
-    }
-    .card2-img{
-        width: 60px;
-        height: 60px;
-        top: 28%;
-        left: 25%;
-    }
-    .Kol-vo2{
-        font-size: 18px;
-        top: 85.5%;
-        left: 25%;
-    }
-    .card2 .kol-vo-plus{
-        font-size: 20px;
-        top: 80%;
-        left: 72%;
-    }
-    .Positions{
-        left: 5%;
-        top: 48%;
-        width: 320px;
-        min-height: 400px;
-        padding: 10px;
-    }
-    .Name-bascet{
-        font-size: 14px;
-        top: 2%;
-        left: 2%;
-    }
-    .Volume-Length{
-        font-size: 14px;
-        top: 2%;
-        left: 33%;
-    }
-    .Kol-vo1{
-        font-size: 20px;
-        top: 10.5%;
-        left: 62%;
-    }
-    .Kol2-vo2{
-        font-size: 20px;
-        top: 20.5%;
-        left: 62%;
-    }
-    .kol-vo{
-        font-size: 14px;
-        top: 2%;
-        left: 61%;
-    }
-    .price{
-        font-size: 14px;
-        top: 2%;
-        left: 85%;
-    }
-    .name1{
-        font-size: 14px;
-        top: 12%;
-        left: 2%;
-    }
-    .volume-length1{
-        font-size: 14px;
-        top: 12%;
-        left: 38%;
-    }
-    .kol-vo1{
-        font-size: 14px;
-        top: 12%;
-        left: 65%;
-    }
-    .price1{
-        font-size: 14px;
-        top: 10%;
-        left: 87%;
-    }
-    .name1 + img{
-        width: 16px;
-        height: 16px;
-        top: 13%;
-        left: 55%;
-    }
-    .name2{
-        font-size: 14px;
-        top: 22%;
-        left: 5%;
-    }
-    .volume-length2{
-        font-size: 14px;
-        top: 22%;
-        left: 38%;
-    }
-    .kol-vo2{
-        font-size: 14px;
-        top: 22%;
-        left: 65%;
-    }
-    .price2{
-        font-size: 14px;
-        top: 20%;
-        left: 87%;
-    }
-    .name2 + img{
-        width: 16px;
-        height: 16px;
-        top: 23%;
-        left: 55%;
-    }
-    .promotional-code{
-        font-size: 20px;
-        top: 35%;
-        left: 5%;
-    }
-    .promotional-code-input{
-        width: 120px;
-        height: 24px;
-        top: 42%;
-        left: 5%;
-        font-size: 14px;
-    }
-    .promotional-code-button{
-        width: 60px;
-        height: 26px;
-        top: 42%;
-        left: 50%;
+
+    .basket-row {
+        grid-template-columns: 1.3fr 0.8fr 1fr 0.8fr;
+        gap: 5px;
         font-size: 12px;
     }
-    .Pizza-Coins{
-        font-size: 20px;
-        top: 52%;
-        left: 5%;
+
+    .basket-product-quantity {
+        gap: 4px;
     }
-    .pizza-Coins{
-        font-size: 16px;
-        top: 59%;
-        left: 5%;
+
+    .basket-product-quantity button {
+        width: 22px;
+        height: 22px;
+        font-size: 15px;
     }
-    .Write-off{
-        width: 70px;
-        height: 24px;
-        top: 58%;
-        left: 35%;
-        font-size: 14px;
+
+    .basket-extra {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
-    .Total{
+
+    .promotional-code {
         font-size: 22px;
-        top: 70%;
-        left: 5%;
     }
-    .total{
-        font-size: 18px;
-        top: 71%;
-        left: 28%;
+
+    .Pizza-Coins {
+        font-size: 22px;
     }
-    .payment-button{
-        width: 200px;
-        height: 40px;
-        top: 85%;
-        left: 15%;
-        font-size: 16px;
+
+    .Total {
+        font-size: 25px;
+    }
+
+    .total {
+        font-size: 21px;
+    }
+
+    .payment-button {
+        font-size: 17px;
     }
 }
