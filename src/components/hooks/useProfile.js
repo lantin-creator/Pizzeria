@@ -24,7 +24,6 @@ export function useProfile() {
         return;
       }
 
-      // Берём из таблицы profiles
       const { data, error } = await supabase
         .from("profiles")
         .select("*")
@@ -96,7 +95,6 @@ export function useProfile() {
       return { success: false };
     }
 
-    // Синхронизируем user_metadata, чтобы при следующем входе данные не «откатились»
     const { error: metaError } = await supabase.auth.updateUser({
       data: fields,
     });
@@ -105,7 +103,6 @@ export function useProfile() {
       console.warn("Не удалось обновить user_metadata:", metaError);
     }
 
-    // Обновляем локальный стейт
     setProfile((prev) => ({ ...prev, ...fields }));
     setMessage("Изменения сохранены!");
     return { success: true, data };
