@@ -133,6 +133,47 @@
   opacity: 0.6;
   cursor: not-allowed;
 }
+.account-wallet {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  color: white;
+}
+.account-balance-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.account-balance {
+  font-size: 20px;
+  font-weight: bold;
+}
+.account-topup-btn {
+  padding: 8px 16px;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to bottom, #ffcc00, #ff6a00);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.account-logout {
+  padding: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.account-logout:hover {
+  color: #ff6a00;
+}
 @media (max-width: 1440px) {
   .account-name { left: 19%; }
   .account-second-name { left: 23%; }
@@ -160,6 +201,9 @@
   .account-mail { top: 42.3%; left: 46%; }
   .account-birthday-wrap { left: 36%; }
   .account-city { left: 44%; }
+  .account-wallet { right: 10px; }
+  .account-balance { font-size: 15px; }
+  .account-topup-btn { padding: 6px 10px; font-size: 14px; }
 }
 @media (min-width: 320px) and (max-width: 768px) {
   .account-btn-back{ 

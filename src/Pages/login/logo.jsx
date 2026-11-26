@@ -1,13 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./logo.css";
 import { useSignIn } from "../../components/hooks/auth";
+import { useAuth } from "../../components/auth/useAuth";
 
 const Logo = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { signIn, loading, message } = useSignIn();
   const navigate = useNavigate();
+  const { user } = useAuth();
+  useEffect(() => {
+    if (user) navigate("/account");
+  }, [user, navigate]);
 
   async function handleSignIn(e) {
     e.preventDefault();

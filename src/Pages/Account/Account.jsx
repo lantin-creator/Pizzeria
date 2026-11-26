@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useProfile } from "../../components/hooks/useProfile";
-import { supabase } from "../../components/lib/supabase";
+import { useAuth } from "../../components/auth/useAuth";
+import TopUpModal from "../../components/TopUp/TopUpModal";
+import { apiRequest } from "../../api";
 import "./Account.css";
+
+const formatPrice = (price) => `${Number(price || 0).toLocaleString("ru-RU")} ₽`;
 
 export default function Account() {
   const navigate = useNavigate();
-  useEffect(() => {
-    supabase.auth.getUser().then(({ data }) => {
-      if (!data.user) navigate("/logo");
-    });
-  }, [navigate]);
+  const { user, loading: authLoading, signOut } = useAuth();
   const { profile, loading, error, updateProfile } = useProfile();
 
   const [firstName, setFirstName] = useState("");
@@ -20,6 +20,14 @@ export default function Account() {
   const [birthday, setBirthday] = useState("");
   const [saving, setSaving] = useState(false);
 
+  const [balance, setBalance] = useState(null);
+  const [balanceFailed, setBalanceFailed] = useState(false);
+  const [topUpOpen, setTopUpOpen] = useState(false);
+
+  useEffect(() => {
+    if (!authLoading && !user) navigate("/logo");
+  }, [authLoading, user, navigate]);
+
   useEffect(() => {
     if (!profile) return;
     setFirstName(profile.first_name ?? "");
@@ -28,6 +36,24 @@ export default function Account() {
     setAddress(profile.addres ?? "");
     setBirthday(profile.birthday ?? "");
   }, [profile]);
+
+  useEffect(() => {
+    if (!user) return;
+    let cancelled = false;
+
+    apiRequest("/wallet")
+      .then((data) => {
+        if (!cancelled) setBalance(data.balance);
+      })
+      .catch((err) => {
+        console.error("Wallet error:", err);
+        if (!cancelled) setBalanceFailed(true);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [user]);
 
   async function handleSave(e) {
     e.preventDefault();
@@ -42,15 +68,49 @@ export default function Account() {
     setSaving(false);
   }
 
-  if (loading) return <p style={{ color: "white" }}>Загрузка профиля...</p>;
+  async function handleLogout() {
+    navigate("/");
+    await signOut();
+  }
+
+  if (!authLoading && !user) return null;
+  if (authLoading || loading) return <p style={{ color: "white" }}>Загрузка профиля...</p>;
   if (error) return <p style={{ color: "red" }}>Ошибка: {error.message}</p>;
   if (!profile) return <p style={{ color: "white" }}>Профиль не найден</p>;
+
+  const balanceText = balanceFailed ? "—" : balance === null ? "…" : formatPrice(balance);
 
   return (
     <div className="account-page">
       <button className="account-btn-back" type="button">
         <Link to="/">← На главную</Link>
       </button>
+
+      <div className="account-wallet">
+        <div className="account-balance-row">
+          <span className="account-balance">Баланс: {balanceText}</span>
+          <button
+            type="button"
+            className="account-topup-btn"
+            onClick={() => setTopUpOpen(true)}
+          >
+            Пополнить
+          </button>
+        </div>
+        <button type="button" className="account-logout" onClick={handleLogout}>
+          Выйти
+        </button>
+      </div>
+
+      {topUpOpen && (
+        <TopUpModal
+          onClose={() => setTopUpOpen(false)}
+          onSuccess={(newBalance) => {
+            setBalance(newBalance);
+            setBalanceFailed(false);
+          }}
+        />
+      )}
 
       <img
         src={profile.avatar || "https://via.placeholder.com/150?text=No+Avatar"}

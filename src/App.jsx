@@ -12,17 +12,20 @@ import { useState } from 'react';
 import Logo from './Pages/login/logo';
 import Register from './Pages/Register/Register';
 import Account from './Pages/Account/Account';
+import { useAuth } from './components/auth/useAuth';
+import LastOrder from './components/LastOrder/LastOrder';
 
 const Home = () => {
   const FloatingBtn = useFloatingBtn('main');
   const [isCallbackOpen, setIsCallbackOpen] = useState(false);
+  const { user } = useAuth();
 
   return (
     <div>
       <div id="main">
         <div className="logo"></div>
         <nav>
-          <Link to="/logo">
+          <Link to={user ? "/account" : "/logo"}>
             <div className="user"></div>
           </Link>
         </nav>
@@ -49,7 +52,7 @@ const Home = () => {
         <Menu onOpenCallback={() => setIsCallbackOpen(true)} />
         <BtnFloat to = "#main" className = "floating-btn" visible={FloatingBtn}/>
       </div>
-
+      <LastOrder />
       <div id="catalog">
         <Catalog />
       </div>

@@ -57,6 +57,8 @@ model Order {
   userId          String        @map("user_id") @db.Uuid
   total           Int
   status          String        @default("PAID")
+  discount        Int           @default(0)
+  promoCode       String?       @map("promo_code")
   deliveryAddress String?       @map("delivery_address")
   createdAt       DateTime      @default(now()) @map("created_at") @db.Timestamptz(6)
   items           OrderItem[]

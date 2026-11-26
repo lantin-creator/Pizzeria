@@ -1,29 +1,28 @@
 import { Router } from "express";
 import { prisma } from "../db.js";
-import { toInt, errText } from "../util.js";
+import { toInt, mapDbError } from "../util.js";
 import { getCart } from "./cart.js";
 
 const router = Router();
 
-async function checkout(userId, address) {
+async function checkout(userId, address, promo) {
   try {
     const [row] = await prisma.$queryRaw`
-      select checkout_order(${userId}::uuid, ${address}::text) as id`;
+      select checkout_order(${userId}::uuid, ${address}::text, ${promo}::text) as id`;
     const wallet = await prisma.wallet.findUnique({ where: { userId } });
     return { ok: true, orderId: Number(row.id), balance: wallet?.balance ?? 0 };
   } catch (e) {
-    const t = errText(e);
-    if (t.includes("INSUFFICIENT_FUNDS")) return { ok: false, status: 402, error: "INSUFFICIENT_FUNDS" };
-    if (t.includes("CART_EMPTY")) return { ok: false, status: 400, error: "CART_EMPTY" };
-    if (t.includes("WALLET_NOT_FOUND")) return { ok: false, status: 404, error: "WALLET_NOT_FOUND" };
+    const m = mapDbError(e);
+    if (m) return { ok: false, ...m };
     throw e;
   }
 }
 
 const cleanAddress = (a) => (typeof a === "string" && a.trim() ? a.trim().slice(0, 300) : null);
+const cleanPromo = (p) => (typeof p === "string" && p.trim() ? p.trim().slice(0, 40) : null);
 
 router.post("/checkout", async (req, res) => {
-  const result = await checkout(req.userId, cleanAddress(req.body.address));
+  const result = await checkout(req.userId, cleanAddress(req.body.address), cleanPromo(req.body.promo));
   if (!result.ok) return res.status(result.status).json({ error: result.error });
   res.json({ orderId: result.orderId, balance: result.balance });
 });
@@ -65,7 +64,7 @@ router.post("/:id/repeat", async (req, res) => {
 
   if (mode === "cart") return res.json(await getCart(req.userId));
 
-  const result = await checkout(req.userId, cleanAddress(req.body.address));
+  const result = await checkout(req.userId, cleanAddress(req.body.address), null);
   if (!result.ok) return res.status(result.status).json({ error: result.error });
   res.json({ orderId: result.orderId, balance: result.balance });
 });
