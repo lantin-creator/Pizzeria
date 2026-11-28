@@ -4,6 +4,7 @@ import { apiRequest } from "../../api";
 import { errorText } from "../../errorTexts";
 import { useAuth } from "../../components/auth/useAuth";
 import { useProfile } from "../../components/hooks/useProfile";
+import LastOrder from "../../components/LastOrder/LastOrder";
 import "./bascet.css";
 
 const images = import.meta.glob("../../assets/*", {
@@ -60,7 +61,7 @@ const Basket = () => {
     const [address, setAddress] = useState("");
 
     const [promoInput, setPromoInput] = useState("");
-    const [promo, setPromo] = useState(null); 
+    const [promo, setPromo] = useState(null);
     const [promoMessage, setPromoMessage] = useState("");
     const [promoLoading, setPromoLoading] = useState(false);
 
@@ -96,6 +97,11 @@ const Basket = () => {
             console.error("Ошибка загрузки баланса:", err);
         }
     }, []);
+
+    const refreshAfterRepeat = () => {
+        loadCart();
+        loadBalance();
+    };
 
     useEffect(() => {
         if (authLoading) return;
@@ -261,7 +267,7 @@ const Basket = () => {
     const toPay = Math.max(cart.total - discount, 0);
     const notEnough = balance !== null && toPay > balance;
 
-    const renderState = (emptyText) => {
+    const renderState = (emptyContent) => {
         if (needLogin) {
             return (
                 <p className="basket-message">
@@ -283,11 +289,21 @@ const Basket = () => {
         }
 
         if (cart.items.length === 0) {
-            return <p className="basket-message">{emptyText}</p>;
+            return emptyContent;
         }
 
         return null;
     };
+
+    const emptyBasketText = (
+        <p className="basket-message">Корзина пока пуста</p>
+    );
+
+    const emptyOffer = paidOrderId ? (
+        emptyBasketText
+    ) : (
+        <LastOrder onChanged={refreshAfterRepeat} fallback={emptyBasketText} />
+    );
 
     return (
         <main className="basket-page">
@@ -304,7 +320,7 @@ const Basket = () => {
                 <section className="basket-preview">
                     <h2 className="Selected-items">Выбранные позиции:</h2>
 
-                    {renderState("Корзина пока пуста") ?? (
+                    {renderState(emptyOffer) ?? (
                         <div className="basket-preview-list">
                             {cart.items.map((item) => {
                                 const image = getImage(item.image?.split(",")[0]);
@@ -343,7 +359,11 @@ const Basket = () => {
                 <section className="Positions">
                     <h2 className="basket-table-title">Состав заказа</h2>
 
-                    {renderState("Добавьте товары из каталога") ?? (
+                    {renderState(
+                        <p className="basket-message">
+                            Добавьте товары из каталога
+                        </p>
+                    ) ?? (
                         <div className="basket-table">
                             <div className="basket-table-header">
                                 <span>Наименование</span>

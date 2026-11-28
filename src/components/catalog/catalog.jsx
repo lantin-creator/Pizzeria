@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cards from "./cards";
 import { apiRequest } from "../../api";
+import { useToast } from "../Toast/useToast";
+import { errorText } from "../../errorTexts";
 
 const imageModules = import.meta.glob("../../assets/*", {
   eager: true,
@@ -95,7 +97,7 @@ const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  const [message, setMessage] = useState("");
+  const { showToast } = useToast();
   const [addingId, setAddingId] = useState(null);
 
   useEffect(() => {
@@ -127,16 +129,17 @@ const Catalog = () => {
     };
   }, []);
 
-  async function handleChoose(product) {
+    async function handleChoose(product) {
     const variant = product.variants?.[0];
 
     if (!variant) {
-      setMessage("У этого товара пока нет доступных вариантов.");
+      showToast("У этого товара пока нет доступных вариантов.", {
+        type: "error",
+      });
       return;
     }
 
     setAddingId(variant.id);
-    setMessage("");
 
     try {
       await apiRequest("/cart/items", {
@@ -147,15 +150,24 @@ const Catalog = () => {
         },
       });
 
-      setMessage(`${product.name} добавлена в корзину!`);
+      showToast(`Добавлено в корзину: ${product.name}`, {
+        action: { label: "В корзину", onClick: () => navigate("/bascet") },
+      });
     } catch (err) {
-      if (err.status === 401) {
-        setMessage("Для добавления товара необходимо войти в аккаунт.");
-      } else {
-        setMessage("Не удалось добавить товар. Попробуйте ещё раз.");
-      }
-
       console.error("Add to cart error:", err);
+
+      if (err.status === 401) {
+        showToast("Чтобы добавить товар, войдите в аккаунт.", {
+          type: "error",
+          duration: 6000,
+          action: { label: "Войти", onClick: () => navigate("/logo") },
+        });
+      } else {
+        showToast(
+          errorText(err, "Не удалось добавить товар. Попробуйте ещё раз."),
+          { type: "error" }
+        );
+      }
     } finally {
       setAddingId(null);
     }
@@ -222,30 +234,6 @@ const Catalog = () => {
 
   return (
     <>
-      {message && (
-        <p
-          style={{
-            color: "white",
-            textAlign: "center",
-            padding: "15px",
-          }}
-        >
-          {message}
-
-          {message.includes("войти") && (
-            <>
-              {" "}
-              <button
-                type="button"
-                onClick={() => navigate("/logo")}
-              >
-                Войти
-              </button>
-            </>
-          )}
-        </p>
-      )}
-
       <div id="popular-catalog">
         {popularProducts.slice(0, 3).map((product, index) =>
           renderCard(product, "popular", index, true)

@@ -5,9 +5,7 @@
   "type": "module",
   "homepage": "https://lantin-creator.github.io/Pizzeria/",
   "scripts": {
-    "dev": "vite",
-    "dev:server": "npm --prefix server run dev",
-    "dev:all": "concurrently -k -n front,api -c cyan,green \"npm run dev\" \"npm run dev:server\"",
+    "dev": "concurrently \"vite\" \"npm --prefix server run dev\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",

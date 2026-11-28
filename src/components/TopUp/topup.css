@@ -1,0 +1,24 @@
+.topup-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.topup-preset {
+  flex: 1 1 70px;
+  height: 40px;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.topup-preset:hover {
+  color: #ff6a00;
+  border-color: #ff6a00;
+}
+.topup-note {
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+  text-align: center;
+}
